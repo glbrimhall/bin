@@ -1,0 +1,1 @@
+debmirror --nosource -m --passive --host=mirrors.kernel.org --root=ubuntu/ --method=ftp --progress --dist=quantal --section=main,restricted,multiverse,universe --arch=amd64 ubuntu/ --ignore-release-gpg

@@ -1,0 +1,83 @@
+#!/bin/sh -e
+# Script to dispatch NetworkManager events
+#
+# Runs ifupdown scripts when NetworkManager fiddles with interfaces.
+
+#if [ -z "$1" ]; then
+#echo "$0: called with no interface" 1>&2
+#exit 1;
+#fi
+
+# Fake ifupdown environment
+#export IFACE="tun1"
+export IFACE="eth0"
+#export LOGICAL="$1"
+#export ADDRFAM="NetworkManager"
+#export METHOD="NetworkManager"
+#export VERBOSITY="0"
+
+# Run the right scripts
+case "up" in
+up)
+iptables -P INPUT ACCEPT
+iptables -F INPUT 
+iptables -P OUTPUT ACCEPT
+iptables -F OUTPUT 
+iptables -P FORWARD DROP
+iptables -F FORWARD 
+iptables -t nat -F
+
+iptables -A FORWARD -i $IFACE -o tun0 -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A FORWARD -i tun0 -o $IFACE -j ACCEPT
+iptables -t nat -A POSTROUTING -o $IFACE -j MASQUERADE
+
+iptables -A FORWARD -i $IFACE -o $IFACE -j REJECT
+;;
+down)
+#
+# reset the default policies in the filter table.
+#
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+
+#
+# reset the default policies in the nat table.
+#
+iptables -t nat -P PREROUTING ACCEPT
+iptables -t nat -P POSTROUTING ACCEPT
+iptables -t nat -P OUTPUT ACCEPT
+
+#
+# reset the default policies in the mangle table.
+#
+iptables -t mangle -P PREROUTING ACCEPT
+iptables -t mangle -P POSTROUTING ACCEPT
+iptables -t mangle -P INPUT ACCEPT
+iptables -t mangle -P OUTPUT ACCEPT
+iptables -t mangle -P FORWARD ACCEPT
+
+#
+# flush all the rules in the filter and nat tables.
+#
+iptables -F
+iptables -t nat -F
+iptables -t mangle -F
+#
+# erase all chains that's not default in filter and nat table.
+#
+iptables -X
+iptables -t nat -X
+iptables -t mangle -X
+;;
+pre-up)
+true
+;;
+post-down)
+true
+;;
+*)
+echo "$0: called with unknown action \`$2'" 1>&2
+exit 1
+;;
+esac

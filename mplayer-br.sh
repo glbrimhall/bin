@@ -1,0 +1,28 @@
+#!/bin/sh
+#gmplayer -vo gl2 -ao alsa -fps 30000/1001 -demuxer lavf $1
+#gmplayer -vo gl2 -ao alsa -fps 30000/1001 -demuxer lavf -ac ffeac3 -vc ffvc1 $1
+#gmplayer -vo gl2 -ao alsa -fps 30000/1001 -demuxer lavf -ni  $1
+#gmplayer -vo gl2 -ao alsa -fps 30000/1001 -demuxer lavf -ni -vc ffmpeg12,mpeg12 $1
+#gmplayer -vo gl2 -ao alsa -fps 30000/1001 -demuxer lavf -vc ffvc1 $1
+#gmplayer -vo vdpau -ao alsa -cache 8192 $1
+#gmplayer -vo gl2 -ao alsa -cache 8192 -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau $1
+#gmplayer -vo vdpau -ao alsa -cache 8192 -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau $1
+
+#mplayer -fs -vo gl2 -ao alsa:device=hw=0.3 -channels 6 -af pan=2:0.66:0:0:0.66:0.33:0:0:0.33:0.66:0.66:0.66:0.66 -fps 30000/1001 -demuxer lavf  $1
+#mplayer -fs -vo gl2 -ao alsa:device=hw=0.3 -fps 30000/1001 -demuxer lavf  $1
+
+#mplayer2 -fs -vo vdpau -ao alsa -channels 6 -af pan=2:0.66:0:0:0.66:0.33:0:0:0.33:0.66:0.66:0.66:0.66 -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau -demuxer lavf  $1
+
+#mplayer2 -fs -vo vdpau -ao alsa:device=iec958 -ac hwdts,hwac3,a52 -dr $1
+
+#mplayer -fs -noaspect -vf-clr -af-clr -vo vdpau -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau -channels 8 -ao alsa:device=iec958 -aid 3 -demuxer lavf -lavdopts threads=4:fast:skiploopfilter=all -sws 0 -afm hwac3 $1
+
+#mplayer -fs -noaspect -vf-clr -af-clr -vo vdpau:queuetime_fs=100,output_surfaces=9,fps=30 -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau -channels 8 -ao alsa:device=iec958 -aid 3 -demuxer lavf -lavdopts threads=4:fast:skiploopfilter=all -sws 0 -afm hwac3 $1
+
+#mplayer -fs -vo vdpau -ao alsa:device=hw=0.3 -channels 6 -af pan=2:0.66:0:0:0.66:0.33:0:0:0.33:0.66:0.66:0.66:0.66 -cache 8192 -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau $1
+#mplayer -fs -vo vdpau -ao alsa:device=hw=0.3 -cache 8192 -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau $1
+#mplayer -fs -vo vdpau -ao alsa -cache 8192 -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau $1
+
+#mplayer -fs -ao alsa:device=spdif -srate 48000 -ac hwdts,hwac3, -channels 6 -vo vdpau -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau -aid 0 br:// -bluray-device $1
+
+mplayer -fs -ao pulse -srate 48000 -channels 6 -vo vdpau -vc ffmpeg12vdpau,ffh264vdpau,ffwmv3vdpau,ffvc1vdpau -aid 0 br:// -bluray-device $1

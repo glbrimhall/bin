@@ -1,0 +1,215 @@
+#!/usr/bin/perl
+
+sub flatten
+{
+   my ($v) = @_;
+   print ("$$v\n");
+#   $$v = lc($$v);
+   $$v =~ s/\, /\-/g;
+   $$v =~ s/[\;\&\[\]]/\+/g;
+   $$v =~ s/[\<\>\!\'\"\|\(\)\/]//g;
+   $$v =~ s/[ \:\.]/_/g;
+   print ("$$v\n");
+}
+
+my $DEVICE = "cdrom";
+my $root_dir = "/image1/music";
+my $extract_dir = "";
+my $device_dir = "";
+my %tags = ();
+my $flac_tags = "";
+my $ogg_tags = "";
+my @songs = ();
+my @rip = ();
+my @tracks = ();
+my $total = 0;
+my $fix_mode = 0;
+
+chomp $ARGV[0];
+
+if ( $ARGV[0] )
+   {$DEVICE = "$ARGV[0]";}
+
+if ( $DEVICE eq "dvd" )
+   {
+   #$CDR_DEV="ATAPI:1,2,0";
+   $CDP_DEV="/dev/scd1";
+   $CDR_DEV=$CDP_DEV;
+   }
+elsif ( $DEVICE eq "cdrom" )
+   {
+   $CDP_DEV="/dev/scd0";
+   $CDR_DEV=$CDP_DEV;
+   }
+elsif ( "$ARGV[0]" eq "clean" )
+   {
+   `rm -f audio_*.inf track*.cdda.wav `;
+   exit 0;
+   }
+else
+   {
+   print("Unknown DEVICE. Exiting.\n");
+   exit 0;
+   }
+
+$device_dir = "$root_dir/$DEVICE";
+
+my $track_list = `ls ??_.inf | sort`;
+   $track_list =~ s/_\.inf//g;
+@tracks = split(' ', $track_list);
+
+if ( 0 < @tracks )
+   {
+   $fix_mode = 1;
+   print ("IN FIX MODE\n");
+   }
+
+$extract_dir = $device_dir;
+
+if ( ! $fix_mode )
+   {
+   `mkdir -p "$extract_dir"`;
+   chdir "$extract_dir";
+   if ( ! -f "audio.cddb" )
+      { `cdda2wav -D $CDR_DEV -vall -x -B -J -L 1 cddbp-server=freedb.freedb.org`; }
+   }
+else
+   {
+   chomp ($extract_dir = `pwd`);
+   }
+
+print "Processing in $extract_dir\n";
+
+if ( ! $fix_mode )
+   {
+   $track_list = `ls audio_*.inf | sort`;
+   $track_list =~ s/audio_//g;
+   $track_list =~ s/\.inf//g;
+   @tracks = split(' ', $track_list);
+   }
+
+my $index = 0;
+foreach my $track (@tracks)
+   {
+   print "processing $track\n";
+   local *AUDINF;
+   open(AUDINF, "< $extract_dir/audio_$track.inf") || open(AUDINF, "< $extract_dir/${track}_.inf") || next;
+   $index = 0 + $track;
+   while (<AUDINF>)
+      {
+      if ( ! $tags{'artist'} && /^Performer=\s+\'([^\']+)\'$/ )  {$tags{'artist'} = $1;}
+      if ( ! $tags{'album'} && /^Albumtitle=\s+\'([^\']+)\'$/ ) {$tags{'album'} = $1;}
+      if ( /^Tracktitle=\s*\'(.+)\'\s*$/ ) {$songs[$index] = $1; print "FOUND song $songs[$index]\n"; }
+      }
+   close(AUDINF);
+
+   if ( ! -f "track".$track.".cdda.wav" )
+      {printf "push @rip, $track\n";
+       push @rip, $track};
+}
+
+$total = `ls audio_*.inf | wc -l`; chomp $total;
+
+$tags{'genre'} = `grep DGENRE=\\w+ "$extract_dir/audio.cddb"`;
+$tags{'genre'} =~ s/^DGENRE=(.+)$/\1/g; chomp $tags{'genre'};
+if ( ! $tags{'genre'} ) { $tags{'genre'} = "Classical";}
+$tags{'date'} = `grep DYEAR= "$extract_dir/audio.cddb"`;
+$tags{'date'} =~ s/^DYEAR=(.+)$/\1/g; chomp $tags{'date'};
+
+if ($tags{'date'} eq "DYEAR=")
+   {$tags{'date'} = "";}
+
+&flatten(\$tags{'artist'});
+&flatten(\$tags{'album'});
+print("$tags{'album'} \n");
+print("$tags{'artist'}\n");
+print("$tags{'genre'} \n");
+print("$tags{'date'}\n");
+
+foreach my $key (keys %tags)
+   {
+   $flac_tags .= ' -T \''.$key.'='.$tags{$key}.'\'';
+   $ogg_tags .= ' --'.$key.'=\''.$tags{$key}.'\'';
+   }
+
+print("flac_tags = |$flac_tags|\n");
+print("ogg_tags = |$ogg_tags|\n");
+
+if ( ! $fix_mode )
+   {
+   if ($total == @rip)
+      {`cdparanoia -d $CDP_DEV -w -B `;}
+   else
+      {
+      foreach my $track (@rip) {`cdparanoia -d $CDP_DEV -w "$track" "track$track.cdda.wav"`;}
+      }
+   }
+
+my $artist = $tags{'artist'};
+my $album = $tags{'album'};
+&flatten(\$artist);
+&flatten(\$album);
+
+my $m3u = "$artist--$album";
+my $ogg_dir = "$root_dir/ogg/$artist/$album";
+my $flac_dir = "$root_dir/$artist/$album";
+
+if ( ! -d "$flac_dir" )
+   {
+   `mkdir -p "$flac_dir"; mv * "$flac_dir"`;
+   }
+
+chdir "$flac_dir";
+
+foreach my $track (@tracks)
+   {
+   $index = 0 + $track;
+   my $song = $songs[$index];
+   $songs[$index] =~ s/\'//g;
+   $songs[$index] =~ s/([\(\)\[\]])/\\$1/g;
+   print("CLEANED |$songs[$index]|\n");
+   &flatten(\$song);
+   $song = $track.'_'.$song;
+   print("CONVERTING |$song|\n");
+
+   if ( -f "${index}_.flac" ) { `mv "${index}_.flac" "$song.flac"`;}
+   elsif ( ! -f "$song.flac" ) {$command = "flac $flac_tags -T \'title=$songs[$index]\' -T \'tracknum=$track\' -o $song.flac track$track.cdda.wav";
+                             print "$command\n"; `$command`; }
+   if ( -f "$ogg_dir/${index}_.ogg" ) { `mv "$ogg_dir/${index}_.ogg" "$ogg_dir/$song.ogg"`;}
+   elsif ( ! -f "$song.ogg" ) {$command = "oggenc $ogg_tags --title=\'$songs[$index]\' --tracknum=\'$track\' -o $song.ogg track$track.cdda.wav";
+                             print "$command\n"; `$command`; }
+   if ( -f "${index}_.inf" ) { `mv "${index}_.inf" "$song.inf"`;}
+   else {`cp audio_$track.inf $song.inf`;}
+   }
+
+if ( $fix_mode )
+   {
+   foreach my $dir ( $ogg_dir, $flac_dir )
+      {
+      `cd $dir`;
+      $m3u = `ls *.m3u`; chomp $m3u;
+      print ("REDOING $dir/$m3u\n");
+      if ( $m3u =~ /ogg\.m3u$/ )
+        { `ls *.ogg > $m3u`; }
+      else
+        { `ls *.flac > $m3u`; }
+      }
+   exit 0;
+   }
+
+my $finished = `ls *.ogg | wc -l`; chomp $finished;
+
+print ("FINISH ? $finished != $total\n");
+
+exit if ($finished != $total);
+
+if ( ! -f "$ogg_dir/$m3u-ogg.m3u") {`mkdir -p $ogg_dir ; ls *.ogg > "$m3u-ogg.m3u" ; mv *.ogg "$m3u-ogg.m3u" $ogg_dir`;}
+if ( ! -f "$flac_dir/$m3u.m3u") {`ls *.flac > "$m3u.m3u"`;}
+
+`rm -f audio_*.inf track*.cdda.wav `;
+
+#To encode back on cd
+#flac -d *.flac
+#cdrecord dev=ATAPI:/dev/hda -v -dao -audio -useinfo -text *.wav
+#rm -f *.wav
+#tracknames.pl freedb.freedb.org 888 < audio_01.inf 
