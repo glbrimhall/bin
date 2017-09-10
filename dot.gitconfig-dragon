@@ -1,0 +1,11 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Geoffrey L. Brimhall
+	email = geoff@glbrimhall.com
+[push]
+	default = matching
+[color]
+	ui = auto
+[core]
+	pager = less -r
