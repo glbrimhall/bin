@@ -1,0 +1,50 @@
+#!/bin/sh
+qemu-system-x86_64 \
+ -enable-kvm \
+ -name guest=xfmint18.1,debug-threads=on \
+ -S \
+ -object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-1-xfmint18.1/master-key.aes \
+ -machine pc-i440fx-2.8,accel=kvm,usb=off,dump-guest-core=off \
+ -cpu Opteron_G5,+vme,+ht,+monitor,+osxsave,+bmi1,+mmxext,+fxsr_opt,+cmp_legacy,+extapic,+cr8legacy,+osvw,+ibs,+skinit,+wdt,+lwp,+tce,+nodeid_msr,+topoext,+perfctr_core,+perfctr_nb \
+ -m 2048 \
+ -realtime mlock=off \
+ -smp 2,sockets=2,cores=1,threads=1 \
+ -uuid ce627566-1b7e-414a-9ddc-480b128187ac \
+ -no-user-config \
+ -nodefaults \
+ -chardev socket,id=charmonitor,path=/var/lib/libvirt/qemu/domain-1-xfmint18.1/monitor.sock,server,nowait \
+ -mon chardev=charmonitor,id=monitor,mode=control \
+ -rtc base=utc,driftfix=slew \
+ -global kvm-pit.lost_tick_policy=delay \
+ -no-hpet \
+ -no-shutdown \
+ -global PIIX4_PM.disable_s3=1 \
+ -global PIIX4_PM.disable_s4=1 \
+ -boot menu=off,strict=on \
+ -device ich9-usb-ehci1,id=usb,bus=pci.0,addr=0x6.0x7 \
+ -device ich9-usb-uhci1,masterbus=usb.0,firstport=0,bus=pci.0,multifunction=on,addr=0x6 \
+ -device ich9-usb-uhci2,masterbus=usb.0,firstport=2,bus=pci.0,addr=0x6.0x1 \
+ -device ich9-usb-uhci3,masterbus=usb.0,firstport=4,bus=pci.0,addr=0x6.0x2 \
+ -device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5 \
+ -drive file=/vol1/qemu/xfmint18.1.qcow2,format=qcow2,if=none,id=drive-virtio-disk0 \
+ -device virtio-blk-pci,scsi=off,bus=pci.0,addr=0x7,drive=drive-virtio-disk0,id=virtio-disk0,bootindex=1 \
+ -drive file=/home/geoff/Downloads/linuxmint-18.1-xfce-64bit.iso,format=raw,if=none,id=drive-ide0-0-0,readonly=on \
+ -device ide-cd,bus=ide.0,unit=0,drive=drive-ide0-0-0,id=ide0-0-0 \
+ -netdev tap,fd=25,id=hostnet0,vhost=on,vhostfd=27 \
+ -device virtio-net-pci,netdev=hostnet0,id=net0,mac=52:54:00:95:19:21,bus=pci.0,addr=0x3 \
+ -chardev pty,id=charserial0 \
+ -device isa-serial,chardev=charserial0,id=serial0 \
+ -chardev spicevmc,id=charchannel0,name=vdagent \
+ -device virtserialport,bus=virtio-serial0.0,nr=1,chardev=charchannel0,id=channel0,name=com.redhat.spice.0 \
+ -spice port=5900,addr=127.0.0.1,disable-ticketing,image-compression=off,seamless-migration=on \
+ -device qxl-vga,id=video0,ram_size=134217728,vram_size=134217728,vram64_size_mb=0,vgamem_mb=64,max_outputs=1,bus=pci.0,addr=0x2 \
+ -device intel-hda,id=sound0,bus=pci.0,addr=0x4 \
+ -device hda-duplex,id=sound0-codec0,bus=sound0.0,cad=0 \
+ -chardev spicevmc,id=charredir0,name=usbredir \
+ -device usb-redir,chardev=charredir0,id=redir0,bus=usb.0,port=1 \
+ -chardev spicevmc,id=charredir1,name=usbredir \
+ -device usb-redir,chardev=charredir1,id=redir1,bus=usb.0,port=2 \
+ -device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x8 \
+ -object rng-random,id=objrng0,filename=/dev/random \
+ -device virtio-rng-pci,rng=objrng0,id=rng0,bus=pci.0,addr=0x9 \
+ -msg timestamp=on
