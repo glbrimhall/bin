@@ -11,7 +11,7 @@ my %mon2num = qw(
 my $debug = 0;
 my $month_after = $mon2num{ shift @ARGV };
 my $year_after = ( shift @ARGV );
-my $output_filter = ( shift @ARGV );
+my @output_filter = @ARGV;
 my $show_month_year = 0;
 my %urls = ();
 
@@ -19,7 +19,7 @@ sub parse_input() {
   
   print "PARSING after $month_after $year_after\n" if $debug;
   
-  while( <> )
+  while( <STDIN> )
   {
     if ( m|^.+\[(\d{1,2})/(\w+)/(\d{4})| ) {
       my $month = $mon2num{ $2 };
@@ -61,8 +61,17 @@ sub print_url_list {
   my @sort_appeared = sort { $$urls{$b} <=> $$urls{$a} } keys %$urls;
 
   foreach my $url ( @sort_appeared ) {
-    if ( defined ( $output_filter ) ) {
-      if ( $url !~ m|$output_filter| ) {
+    if ( @output_filter ) {
+      my $show_url = 1;
+    
+      foreach my $filter ( @output_filter ) {
+        if ( $url =~ m|$filter| ) {
+          $show_url = 0;
+          last;
+        }
+      }
+
+      if ( $show_url ) {
         print "[URL] " . $url . " APPEARED " . $$urls{ $url } . "\n";
         delete $$urls{ $url };
       }
@@ -77,8 +86,8 @@ sub print_url_list {
 
 &print_url_list( \%urls );
 
-if ( defined( $output_filter ) ) {
-  print "\nOUTPUT_FILTER: $output_filter:\n";
-  undef $output_filter;
+if ( @output_filter ) {
+  print "\nOUTPUT_FILTER: ".join( ', ', @output_filter )."\n";
+  @output_filter = ();
   &print_url_list( \%urls );
 }
