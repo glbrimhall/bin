@@ -10,12 +10,14 @@ HOSTCERTS=/repo1/registry-certs
 HOSTREPO=/repo1/registry
 GUESTREPO=/var/lib/registry
 
-# !! IMPORTANT !! docker matches on the CN, ie an image's name must match CN/mysql
+# !! IMPORTANT !! docker matches on the CN 
 DOMAIN=dockerepo.library.arizona.edu
 DAEMONIZE=-d
 
 # Docker setup;
-test !-d $HOSTREPO && mkdir $HOSTREPO
+if [ ! -d $HOSTREPO ]; then
+    mkdir -p $HOSTREPO
+fi
 
 if [ ! -f $HOSTCERTS/$DOMAIN.crt ]; then
     openssl req \
@@ -28,14 +30,18 @@ docker pull $REPOSITORY
 docker run $DAEMONIZE \
   --restart=always \
   -v $HOSTCERTS:/certs \
+  -v $HOSTCERTS:/auth \
   -e REGISTRY_HTTP_ADDR=0.0.0.0:$GUESTPORT \
   -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/$DOMAIN.crt \
   -e REGISTRY_HTTP_TLS_KEY=/certs/$DOMAIN.key \
+  -e "REGISTRY_AUTH=htpasswd" \
+  -e "REGISTRY_AUTH_HTPASSWD_REALM=Registry Realm" \
+  -e REGISTRY_AUTH_HTPASSWD_PATH=/auth/users.conf \
   -p $HOSTPORT:$GUESTPORT \
   -v $HOSTREPO:$GUESTREPO \
-  -v /etc/passwd:/passwd \
-  -u $REGUSER \
   --name $NAME \
   $REPOSITORY
+
+
 
 #docker run -e "REGISTRY_USER=$REGISTRY_USER" -e "REGISTRY_PASSWORD=$REGISTRY_PASSWORD" -e PGDATA=$GUESTREPO -v $HOSTREPO:$GUESTREPO --net=bridge $DAEMONIZE --name $NAME -i $REPOSITORY
