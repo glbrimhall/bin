@@ -2,6 +2,7 @@
 use strict;
 
 my $dst_registry = shift @ARGV;
+my @image_list = @ARGV;
 my @dst_images = ();
 my %images = ();
 my $debug = 0;
@@ -20,9 +21,6 @@ sub build_image_list() {
    }
 
    print "EXTRACTED ".keys( %images )." docker images:\n  ".join( "\n  ", keys( %images ) )."\n";
-}
-
-sub tag_image_list() {
 
    my %image_ids = ();
 
@@ -34,8 +32,17 @@ sub tag_image_list() {
       next if ( $regname[ 0 ] eq $dst_registry );
 
       my $basename = ( @regname == 2 ) ? $regname[ 1 ] : $regname[ 0 ];
-      my $tag_cmd = "docker tag $repo $dst_registry/$basename";
-      push @dst_images, "$dst_registry/$basename";
+      push @image_list, $basename;
+
+      $image_ids{ $images{ $repo } }++;
+    }
+}
+
+sub tag_image_list() {
+
+   foreach my $img ( @image_list ) {
+      my $tag_cmd = "docker tag $img $dst_registry/$img";
+      push @dst_images, "$dst_registry/$img";
 
       if ( $debug ) {
          print "EXEC: ".$tag_cmd."\n";
@@ -45,7 +52,6 @@ sub tag_image_list() {
         print "EXEC: ".$tag_cmd." returned ".$out."\n";
       }
 
-      $image_ids{ $images{ $repo } }++;
    }
 }
 
@@ -67,8 +73,10 @@ sub clean_image_list() {
   }
 }
 
-
-&build_image_list();
+if ( ! @image_list || $image_list[ 0 ] eq "all" ) {
+  @image_list = ();
+  &build_image_list();
+}
 
 &tag_image_list();
 
