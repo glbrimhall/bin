@@ -1,2 +1,3 @@
 #!/bin/bash
-git pull origin master
+BRANCH=${1:-master}
+git pull origin $BRANCH
