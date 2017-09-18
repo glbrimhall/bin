@@ -29,14 +29,14 @@ echo 'fi' >> ~/.bashrc
 fi
 
 if [ ! ~/.gitconfig ]; then
-   ln -s ~/bin/dit.gitconfig-glb-linux ~/.gitconfig
+   ln -s ~/bin/dot.gitconfig-glb-linux ~/.gitconfig
 fi
 
 echo "GIT: cloning dot.emacs.d.git"
 
 git clone git@github.com:glbrimhall/dot.emacs.d.git
 
-rm -fr .emacs.d
-rm -f .emacs
-ln -s dot.emacs.d .emacs.d
-ln dot.emacs.d/dot.emacs .emacs
+rm -fr ~/.emacs.d
+rm -f ~/.emacs
+ln -s dot.emacs.d ~/.emacs.d
+ln dot.emacs.d/dot.emacs ~/.emacs
