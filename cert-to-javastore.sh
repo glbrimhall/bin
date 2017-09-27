@@ -2,16 +2,21 @@
 set -x
 
 DEVICE=${1%.*}
+PASSWORD=${2:-jenkinskeystorepassword}
+CACERT=${3}
+
+if [ "$CACERT" != "" ]; then
+   USE_CACERT="-certfile $CACERT"
+fi
 
 echo "CERT: creating keystore for $DEVICE"
-exit
 
 openssl pkcs12 -export -out $DEVICE.p12 \
-        -passout 'pass:changeit' -inkey example.com.key \
-        -in example.com.crt -certfile ca.crt -name example.com.key
+        -passout "pass:$PASSWORD" -inkey $DEVICE.key \
+        -in $DEVICE.crt $USE_CACERT -name $DEVICE
 
-
-openssl x509 -in $DEVICE -text -noout
-
-echo "CERT: SHA-1 hash of cert"
-openssl x509 -fingerprint -sha1 -noout -in $DEVICE
+keytool -importkeystore -srckeystore $DEVICE.p12 \
+        -srcstorepass "$PASSWORD" -srcstoretype PKCS12 \
+        -srcalias $DEVICE -deststoretype JKS \
+        -destkeystore $DEVICE.jks -deststorepass "$PASSWORD" \
+        -destalias $DEVICE
