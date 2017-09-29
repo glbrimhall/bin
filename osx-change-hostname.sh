@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 
 DOMAIN_NAME="$1"
 MACHINE_NAME=${DOMAIN_NAME%%.*}
