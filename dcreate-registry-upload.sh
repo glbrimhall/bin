@@ -9,6 +9,8 @@ GUESTPORT=5000
 HOSTCERTS=/repo1/docker/registry/certs
 HOSTREPO=/repo1/docker/registry/upload
 GUESTREPO=/var/lib/registry
+HOSTCONFIG=/home/glbrimhall/bin/dcreate-registry-upload-config.yml
+GUESTCONFIG=/etc/docker/registry/config.yml
 
 # !! IMPORTANT !! docker matches on the CN 
 DOMAIN=dockerepo.library.arizona.edu
@@ -33,6 +35,7 @@ docker run $DAEMONIZE \
   -e REGISTRY_HTTP_ADDR=0.0.0.0:$GUESTPORT \
   -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/$DOMAIN.crt \
   -e REGISTRY_HTTP_TLS_KEY=/certs/$DOMAIN.key \
+  -e REGISTRY_STORAGE_DELETE_ENABLED=true \
   -p $HOSTPORT:$GUESTPORT \
   -v $HOSTREPO:$GUESTREPO \
   --name $NAME \
