@@ -10,9 +10,10 @@ else
 if [ "$TAG" == "" ]; then
     curl -X GET $REGISTRY/v2/$IMAGE/tags/list
 else
-    curl -X GET -vvv --stderr - \
+    OUT=$( curl -X GET -vvv --stderr - \
         -H "Accept: application/vnd.docker.distribution.manifest.v2+json" \
-        -k $REGISTRY/v2/$IMAGE/manifests/$TAG | \
-    grep etag
+        -k $REGISTRY/v2/$IMAGE/manifests/$TAG )
+    echo "$OUT"
+    echo "$OUT" | grep --color=auto -i etag
 fi
 fi

@@ -9,7 +9,6 @@ REGISTRY_URL=dockerepo.library.arizona.edu:5000
 HOSTPORT=8080
 HOSTVOL=/repo1/docker/registry/web
 HOSTCACERT=/repo1/docker/registry/certs/java-cacerts
-GUESTPORT=8080
 READ_ONLY="-e READ_ONLY=true"
 DAEMONIZE=-d
 
@@ -21,7 +20,7 @@ docker run $DAEMONIZE \
   --net=host \
   -e REGISTRY_URL=https://$REGISTRY_URL/v2 \
   -e REGISTRY_NAME=$REGISTRY_URL \
-  -p $HOSTPOST:$GUESTPORT \
+  -p $HOSTPOST:8080 \
   -v $HOSTCACERT:/etc/ssl/certs/java/cacerts \
   --name $NAME \
   $REPOSITORY
