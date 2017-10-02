@@ -1,15 +1,23 @@
-#!/bin/sh
+#!/bin/bash
 
 # These steps taken from https://dalibornasevic.com/posts/2-permanently-remove-files-and-folders-from-git-repo
 
 FILEDIR=$1
+FILETYPE=$2
 
 if [ "$FILEDIR" == "" ]; then
     echo "Must specify a directory to permantely purge from your git repository"
 fi
 
+if [ "$FILETYPE" == "" ]; then
+    if [ -d "$FILEDIR" ]; then
+        FILETYPE="dir"
+    else
+        FILETYPE="file"
+    fi
+fi
 
-if [ -d "$FILEDIR" ]; then
+if [ "$FILETYPE" == "dir" ]; then
    echo "GIT: purging directory $FILEDIR"
 
    # Remove all traces of directory
