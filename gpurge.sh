@@ -17,6 +17,8 @@ if [ "$FILETYPE" == "" ]; then
     fi
 fi
 
+rm -fr .git-rewrite
+
 if [ "$FILETYPE" == "dir" ]; then
    echo "GIT: purging directory $FILEDIR"
 
