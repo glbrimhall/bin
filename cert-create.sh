@@ -16,7 +16,7 @@ if [ ! -d $DESTDIR ]; then
     mkdir -p $DESTDIR
 fi
 
-if [ "$ROOTCAPEM" != "" ]; then
+if [ "$ROOTCAPEM" != "" || "$ROOTCAPEM" != "self" ]; then
 if [ ! -f $DESTDIR/$ROOTCA.pem ]; then
 
 echo
@@ -40,7 +40,7 @@ fi
 
 openssl x509 -in $DESTDIR/$ROOTCA.pem -text -noout
  
-INCLUDE_ROOTCA="-CA $DESTDIR/$ROOTCA.pem -CAkey $DESTDIR/$ROOTCA.key -CAcreateserial"
+SIGNING_KEY="-CA $DESTDIR/$ROOTCA.pem -CAkey $DESTDIR/$ROOTCA.key -CAcreateserial"
 
 fi
 
@@ -58,14 +58,21 @@ openssl req -nodes -newkey rsa:2048 -keyout $DESTDIR/$DEVICE.key -subj "$SUBJECT
 
 fi
 
-if [ "$INCLUDE_ROOTCA" != "" ]; then
+if [ "$2" == "self" ]; then
+    SIGNING_KEY="-signkey $DESTDIR/$DEVICE.key"
+fi
+
+if [ "$SIGNING_KEY" != "" ]; then
 
 echo
-echo "CERT: generating $DEVICE.crt by signing $DEVICE.csr with $ROOTCA.pem"
+echo "CERT: generating $DEVICE.crt by signing $DEVICE.csr with $SIGNING_KEY"
 echo
 
-openssl x509 -req -extfile <(printf "subjectAltName=DNS:$DEVICE") -in $DESTDIR/$DEVICE.csr $INCLUDE_ROOTCA -out $DESTDIR/$DEVICE.crt -days $DAYS -sha256
+openssl x509 -req -extfile <(printf "subjectAltName=DNS:$DEVICE") -in $DESTDIR/$DEVICE.csr $SIGNING_KEY -out $DESTDIR/$DEVICE.crt -days $DAYS -sha256
 
 openssl x509 -in $DESTDIR/$DEVICE.crt -text -noout
+
+echo "CERT: SHA-1 hash of cert"
+openssl x509 -fingerprint -sha1 -noout -in $DESTDIR/$DEVICE.crt
 
 fi

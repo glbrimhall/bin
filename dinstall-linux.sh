@@ -56,3 +56,9 @@ if [ -d "$DOCKERDIR" && ! -d "$DOCKERDIR/docker-engine" ]; then
     service docker start
 fi
 
+echo "INSTALL docker-compose"
+
+apt-get install python-pip
+pip install --upgrade pip
+pip install docker-compose
+
