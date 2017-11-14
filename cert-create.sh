@@ -5,8 +5,8 @@ set -x
 # https://datacenteroverlords.com/2012/03/01/creating-your-own-ssl-certificate-authority/
 
 DAYS=1095        # 3 * 365
-DESTDIR=certs
-ROOTCAPEM=${2}
+DESTDIR=${2:-web}
+ROOTCAPEM=${3}
 ROOTCA=${ROOTCAPEM%%.pem}
 DEVICE=${1:-localhost-proxy}
 SUBJECT="/C=US/postalCode=85721/ST=Arizona/L=Tucson/streetAddress=The University of Arizona/O=The University of Arizona/OU=The University of Arizona Library/CN="
@@ -58,7 +58,7 @@ openssl req -nodes -newkey rsa:2048 -keyout $DESTDIR/$DEVICE.key -subj "$SUBJECT
 
 fi
 
-if [ "$2" == "self" ]; then
+if [ "$ROOTCA" == "self" ]; then
     SIGNING_KEY="-signkey $DESTDIR/$DEVICE.key"
 fi
 
