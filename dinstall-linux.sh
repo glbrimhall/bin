@@ -43,6 +43,12 @@ echo "TODO: write docker installer for yum based systems"
     
 fi
 
+cat <<EOF > /etc/docker/daemon.json
+{
+    "registry-mirrors": ["https://dockerepo.library.arizona.edu"]
+}
+EOF
+
 if [ -e ~/etc.docker.tar.gz ]; then
     cd /etc/ ; tar -xzvf ~/etc.docker.tar.gz; cd -
     service docker restart
