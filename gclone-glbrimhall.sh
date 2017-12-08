@@ -38,5 +38,5 @@ git clone git@github.com:glbrimhall/dot.emacs.d.git
 
 rm -fr ~/.emacs.d
 rm -f ~/.emacs
-ln -s dot.emacs.d ~/.emacs.d
-ln dot.emacs.d/dot.emacs ~/.emacs
+ln -s dot.emacs.d .emacs.d
+ln -s dot.emacs.d/dot.emacs ~/.emacs
