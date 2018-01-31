@@ -17,3 +17,4 @@ fi
 
 git branch $DELETE_FLAG $BRANCH
 git push $DELETE_FLAG origin $BRANCH
+git fetch --all --prune
