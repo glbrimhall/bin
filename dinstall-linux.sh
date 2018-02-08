@@ -15,9 +15,10 @@ if [ "$PACKAGER" == "apt" ]; then
     
 apt-get remove docker docker-engine docker.io
 
+#        linux-image-extra-$(uname -r) \
+#        linux-image-extra-virtual \
+
 apt-get install -y \
-        linux-image-extra-$(uname -r) \
-        linux-image-extra-virtual \
         apt-transport-https \
         ca-certificates \
         curl \
