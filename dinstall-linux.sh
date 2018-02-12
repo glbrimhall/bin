@@ -22,7 +22,8 @@ apt-get install -y \
         apt-transport-https \
         ca-certificates \
         curl \
-        software-properties-common
+        software-properties-common \
+        colordiff
 
 curl -fsSL https://download.docker.com/linux/$OSNAME/gpg | sudo apt-key add -
 
