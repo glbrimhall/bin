@@ -12,5 +12,16 @@ CONTAINER=${1:-$DEFAULT_CONTAINER}
 SHELL=${2:-bash}
 
 docker start "$CONTAINER"
-docker exec -it "$CONTAINER" $SHELL -i
+
+if [ "$SHELL" = "bash" ] || [ "$SHELL" = "sh" ]; then
+
+    docker exec -it "$CONTAINER" $SHELL -i
+
+else
+
+    shift
+    docker exec "$CONTAINER" $@
+
+fi
+
 #docker exec -it "$CONTAINER" bash -c "stty cols $CONSOLE_COLS rows $CONSOLE_ROWS"
