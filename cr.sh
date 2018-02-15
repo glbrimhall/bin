@@ -11,7 +11,7 @@ mkdir -p $TMP/$DATETIME
 #    --disable-infobars \
 
 $CHROME \
-    --window-position=300,800 \
+    --window-position=100,900 \
     --window-size="1200,1224" \
     --user-data-dir=$TMP/$DATETIME \
     --no-default-browser-check \
