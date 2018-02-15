@@ -12,8 +12,8 @@
 	local = yellow
 	remote = green
 [color "diff"]
-	meta = red bold
-	frag = yellow
+	meta = yellow bold
+	frag = red bold
 	old = cyan
 	new = magenta bold
 [color "status"]
@@ -21,4 +21,4 @@
 	changed = green
 	untracked = cyan
 [core]
-	pager=less-R
+	pager = less -R
