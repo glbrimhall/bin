@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -f docker-compose.yml ] && [ "$1" = ""]; then
+if [ -f docker-compose.yml ] && [ "$1" = "" ]; then
   docker-compose stop
 else
 
