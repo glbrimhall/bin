@@ -1,5 +1,5 @@
 #!/bin/sh
-URL=${1:-http://localhost}
+URL=${1:-http://localhost/upload}
 CHROME=${2:-google-chrome}
 #DATETIME=`date +%Y-%m-%d.%H.%M.%S`
 DATETIME=${3:-"chrome-debug"}
