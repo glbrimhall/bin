@@ -5,7 +5,19 @@
 	email = glbrimhall@email.arizona.edu
 [push]
 	default = matching
-[color]
-	ui = true
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = red bold
+	old = cyan
+	new = magenta bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
 [core]
-	pager = less -r
+	pager = less -R

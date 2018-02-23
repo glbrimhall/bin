@@ -118,5 +118,10 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
+if [ "`which colordiff`" != "" ]; then
+    alias diff=colordiff
+fi
+
 alias e='emacs'
 alias less='less -R'
+alias ll='ls -R'
