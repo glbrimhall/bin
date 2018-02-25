@@ -124,4 +124,6 @@ fi
 
 alias e='emacs'
 alias less='less -R'
-alias ll='ls -R'
+alias ll='ls -l'
+alias lr='ls -R'
+alias df='df -h'
