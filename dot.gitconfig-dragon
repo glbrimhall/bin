@@ -6,6 +6,6 @@
 [push]
 	default = matching
 [color]
-	ui = auto
+	ui = true
 [core]
-	pager = less -R
+	pager = less -r

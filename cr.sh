@@ -10,9 +10,13 @@ mkdir -p $TMP/$DATETIME
 #$CHROME --auto-open-devtools-for-tabs $URL
 #    --disable-infobars \
 
-$CHROME \
-    --window-position=100,900 \
-    --window-size="1200,1224" \
+if [ "$HOSTNAME" = "glb-linux" ]; then
+SIZED_POSITION="\
+ --window-position=100,900 \
+ --window-size='1200,1224'"
+fi
+
+$CHROME $SIZED_POSITION \
     --user-data-dir=$TMP/$DATETIME \
     --no-default-browser-check \
     --auto-open-devtools-for-tabs \
