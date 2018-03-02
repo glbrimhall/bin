@@ -10,10 +10,10 @@ mkdir -p $TMP/$DATETIME
 #$CHROME --auto-open-devtools-for-tabs $URL
 #    --disable-infobars \
 
-if [ "$HOSTNAME" = "glb-linux" ]; then
+if [ "`hostname`" = "glb-linux" ]; then
 SIZED_POSITION="\
  --window-position=100,900 \
- --window-size='1200,1224'"
+ --window-size=1200,1224"
 fi
 
 $CHROME $SIZED_POSITION \
