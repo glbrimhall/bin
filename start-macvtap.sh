@@ -7,7 +7,7 @@
 # and a static (manual) ip config
 # Evert Mouw, 2013
 
-HWLINK=eno1
+HWLINK=enp0s31f6
 MACVLN=macvlan0
 TESTHOST=www.google.com
 
