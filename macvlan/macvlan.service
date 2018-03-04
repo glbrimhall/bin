@@ -1,0 +1,14 @@
+[Unit]
+Description=Enable mavlan interface
+After=network.target
+Before=libvirtd.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/home/geoff/bin/start-macvtap.sh
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
