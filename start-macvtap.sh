@@ -7,7 +7,6 @@
 # and a static (manual) ip config
 # Evert Mouw, 2013
 
-HWLINK=enp0s31f6
 MACVLN=macvlan0
 TESTHOST=www.google.com
 
@@ -25,6 +24,8 @@ done
 # get network config
 # ------------
 
+HWLINK="`/sbin/route | grep '^default' | grep -o '[^ ]*$'`"
+
 #1/11/2017 Enabling host-guest networking with KVM, Macvlan and Macvtap ♎ Furor Teutonicus
 #https://www.furorteutonicus.eu/2013/08/04/enabling-host-guest-networking-with-kvm-macvlan-and-macvtap/ 4/12
 
@@ -32,6 +33,7 @@ IP=$(ip address show dev $HWLINK | grep "inet " | awk '{print $2}')
 NETWORK=$(ip -o route | grep "dev $HWLINK" | grep "proto kernel" | awk '{print $1}')
 GATEWAY=$(ip -o route | grep default | awk '{print $3}')
 
+echo "HWLINK=$HWLINK"
 echo "IP=$IP"
 echo "NETWORK=$NETWORK"
 echo "GATEWAY=$GATEWAY"
