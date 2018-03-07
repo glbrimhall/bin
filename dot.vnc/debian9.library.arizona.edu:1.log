@@ -1,0 +1,1420 @@
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 13:45:53 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+
+Wed Aug 30 13:46:12 2017
+ Connections: accepted: [::1]::33226
+ SConnection: Client needs protocol version 3.8
+ SConnection: Client requests security type VncAuth(2)
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+
+Wed Aug 30 13:46:26 2017
+ Connections: closed: [::1]::33226 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 1
+ EncodeManager:   Tight:
+ EncodeManager:     Solid: 1 rects, 2.28 Mpixels
+ EncodeManager:            16 B (1:570001 ratio)
+ EncodeManager:   Total: 1 rects, 2.28 Mpixels
+ EncodeManager:          16 B (1:570001 ratio)
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 13:47:36 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+xfce4-session: Another session manager is already running
+
+Wed Aug 30 13:47:53 2017
+ Connections: accepted: [::1]::33228
+ SConnection: Client needs protocol version 3.8
+ SConnection: Client requests security type VncAuth(2)
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+
+Wed Aug 30 13:48:13 2017
+ Connections: closed: [::1]::33228 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 1
+ EncodeManager:   Tight:
+ EncodeManager:     Solid: 1 rects, 2.28 Mpixels
+ EncodeManager:            16 B (1:570001 ratio)
+ EncodeManager:   Total: 1 rects, 2.28 Mpixels
+ EncodeManager:          16 B (1:570001 ratio)
+
+Wed Aug 30 13:48:15 2017
+ Connections: accepted: [::1]::33230
+ SConnection: Client needs protocol version 3.8
+ SConnection: Client requests security type VncAuth(2)
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+
+Wed Aug 30 13:48:21 2017
+ Connections: closed: [::1]::33230 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 1
+ EncodeManager:   Tight:
+ EncodeManager:     Solid: 1 rects, 2.28 Mpixels
+ EncodeManager:            16 B (1:570001 ratio)
+ EncodeManager:   Total: 1 rects, 2.28 Mpixels
+ EncodeManager:          16 B (1:570001 ratio)
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 13:49:09 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":1"
+      after 173 requests (173 known processed) with 0 events remaining.
+Killing Xtigervnc process ID 20603... which seems to be deadlocked. Using SIGKILL!
+Unrecognized option: -startup
+use: X [:<display>] [option]
+-a #                   default pointer acceleration (factor)
+-ac                    disable access control restrictions
+-audit int             set audit trail level
+-auth file             select authorization file
+-br                    create root window with black background
++bs                    enable any backing store support
+-bs                    disable any backing store support
+-c                     turns off key-click
+c #                    key-click volume (0-100)
+-cc int                default color visual class
+-nocursor              disable the cursor
+-core                  generate core dump on fatal error
+-displayfd fd          file descriptor to write display number to when ready to connect
+-dpi int               screen resolution in dots per inch
+-dpms                  disables VESA DPMS monitor control
+-deferglyphs [none|all|16] defer loading of [no|all|16-bit] glyphs
+-f #                   bell base (0-100)
+-fc string             cursor font
+-fn string             default font name
+-fp string             default font path
+-help                  prints message with these options
++iglx                  Allow creating indirect GLX contexts
+-iglx                  Prohibit creating indirect GLX contexts (default)
+-I                     ignore all remaining arguments
+-ld int                limit data space to N Kb
+-lf int                limit number of open files to N
+-ls int                limit stack space to N Kb
+-nolock                disable the locking mechanism
+-maxclients n          set maximum number of clients (power of two)
+-nolisten string       don't listen on protocol
+-listen string         listen on protocol
+-noreset               don't reset after last client exists
+-background [none]     create root window with no background
+-reset                 reset after last client exists
+-p #                   screen-saver pattern duration (minutes)
+-pn                    accept failure to listen on all ports
+-nopn                  reject failure to listen on all ports
+-r                     turns off auto-repeat
+r                      turns on auto-repeat 
+-render [default|mono|gray|color] set render color alloc policy
+-retro                 start with classic stipple and cursor
+-s #                   screen-saver timeout (minutes)
+-seat string           seat to run on
+-t #                   default pointer threshold (pixels/t)
+-terminate             terminate at server reset
+-to #                  connection time out
+-tst                   disable testing extensions
+ttyxx                  server started from init on /dev/ttyxx
+v                      video blanking for screen-saver
+-v                     screen-saver without video blanking
+-wm                    WhenMapped default backing-store
+-wr                    create root window with white background
+-maxbigreqsize         set maximal bigrequest size 
++xinerama              Enable XINERAMA extension
+-xinerama              Disable XINERAMA extension
+-dumbSched             Disable smart scheduling and threaded input, enable old behavior
+-schedInterval int     Set scheduler interval in msec
+-sigstop               Enable SIGSTOP based startup
++extension name        Enable extension
+-extension name        Disable extension
+-query host-name       contact named host for XDMCP
+-broadcast             broadcast for XDMCP
+-multicast [addr [hops]] IPv6 multicast for XDMCP
+-indirect host-name    contact named host for indirect XDMCP
+-port port-num         UDP port number to send messages to
+-from local-address    specify the local address to connect from
+-once                  Terminate server after one session
+-class display-class   specify display class to send in manage
+-cookie xdm-auth-bits  specify the magic cookie for XDMCP
+-displayID display-id  manufacturer display ID for request
+[+-]accessx [ timeout [ timeout_mask [ feedback [ options_mask] ] ] ]
+                       enable/disable accessx key sequences
+-ardelay               set XKB autorepeat delay
+-arinterval            set XKB autorepeat interval
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+-screen scrn WxHxD     set screen's width, height, depth
+-pixdepths list-of-int support given pixmap depths
++/-render		   turn on/off RENDER extension support(default on)
+-linebias n            adjust thin line pixelization
+-blackpixel n          pixel value for black
+-whitepixel n          pixel value for white
+-shmem                 put framebuffers in shared memory
+-geometry WxH          set screen 0's width, height
+-depth D               set screen 0's depth
+-pixelformat fmt       set pixel format (rgbNNN or bgrNNN)
+-inetd                 has been launched from inetd
+-noclipboard           disable clipboard settings modification via vncconfig utility
+-verbose [n]           verbose startup messages
+-quiet                 minimal startup messages
+-version               show the server version
+
+VNC parameters:
+
+Parameters can be turned on with -<param> or off with -<param>=0
+Parameters which take a value can be specified as -<param> <value>
+Other valid forms are <param>=<value> -<param>=<value> --<param>=<value>
+Parameter names are case-insensitive.  The parameters are:
+
+Global Parameters:
+  ZlibLevel      - Zlib compression level (default=-1)
+  ImprovedHextile - Use improved compression algorithm for Hextile encoding
+                   which achieves better compression ratios by the cost of
+                   using more CPU time (default=1)
+  pam_service    - Alias for PAMService
+  PAMService     - Service name for PAM password validation (default=vnc)
+  PlainUsers     - Users permitted to access via Plain security type (including
+                   TLSPlain, X509Plain etc.) (default=)
+  GnuTLSPriority - GnuTLS priority string that controls the TLS session’s
+                   handshake algorithms (default=NORMAL)
+  MaxCutText     - Maximum permitted length of an incoming clipboard update
+                   (default=262144)
+  RemapKeys      - Comma-separated list of incoming keysyms to remap.  Mappings
+                   are expressed as two hex values, prefixed by 0x, and
+                   separated by -> (default=)
+  BlacklistTimeout - The initial timeout applied when a host is first
+                   black-listed.  The host cannot re-attempt a connection until
+                   the timeout expires. (default=10)
+  BlacklistThreshold - The number of unauthenticated connection attempts
+                   allowed from any individual host before that host is
+                   black-listed (default=5)
+  AlwaysSetDeferUpdateTimer - Always reset the defer update timer on every
+                   change (default=0)
+  DeferUpdate    - Time in milliseconds to defer updates (default=1)
+  QueryConnectTimeout - Number of seconds to show the Accept Connection dialog
+                   before rejecting the connection (default=10)
+  QueryConnect   - Prompt the local user to accept or reject incoming
+                   connections. (default=0)
+  AcceptSetDesktopSize - Accept set desktop size events from clients.
+                   (default=1)
+  SendCutText    - Send clipboard changes to clients. (default=1)
+  AcceptCutText  - Accept clipboard updates from clients. (default=1)
+  AcceptPointerEvents - Accept pointer press and release events from clients.
+                   (default=1)
+  AcceptKeyEvents - Accept key press and release events from clients.
+                   (default=1)
+  DisconnectClients - Disconnect existing clients if an incoming connection is
+                   non-shared. If combined with NeverShared then new
+                   connections will be refused while there is a client active
+                   (default=1)
+  NeverShared    - Never treat incoming connections as shared, regardless of
+                   the client-specified setting (default=0)
+  AlwaysShared   - Always treat incoming connections as shared, regardless of
+                   the client-specified setting (default=0)
+  Protocol3.3    - Always use protocol version 3.3 for backwards compatibility
+                   with badly-behaved clients (default=0)
+  CompareFB      - Perform pixel comparison on framebuffer to reduce
+                   unnecessary updates (0: never, 1: always, 2: auto)
+                   (default=2)
+  ClientWaitTimeMillis - The number of milliseconds to wait for a client which
+                   is no longer responding (default=20000)
+  MaxIdleTime    - Terminate after s seconds of user inactivity (default=0)
+  MaxConnectionTime - Terminate when a client has been connected for s seconds
+                   (default=0)
+  MaxDisconnectionTime - Terminate when no client has been connected for s
+                   seconds (default=0)
+  IdleTimeout    - The number of seconds after which an idle VNC connection
+                   will be dropped (zero means no timeout) (default=0)
+  Log            - Specifies which log output should be directed to which
+                   target logger, and the level of output to log. Format is
+                   <log>:<target>:<level>[, ...]. (default=)
+  UseIPv6        - Use IPv6 for incoming and outgoing connections. (default=1)
+  UseIPv4        - Use IPv4 for incoming and outgoing connections. (default=1)
+  AllowOverride  - Comma separated list of parameters that can be modified
+                   using VNC extension.
+                   (default=desktop,AcceptPointerEvents,SendCutText,AcceptCutText)
+  AvoidShiftNumLock - Avoid fake Shift presses for keys affected by NumLock.
+                   (default=1)
+  interface      - listen on the specified network address (default=all)
+  localhost      - Only allow connections from localhost (default=0)
+  desktop        - Name of VNC desktop (default=x11)
+  rfbport        - TCP port to listen for RFB protocol (default=0)
+  rfbwait        - Alias for ClientWaitTimeMillis
+  httpPort       - TCP port to listen for HTTP (default=0)
+  httpd          - Directory containing files to serve via HTTP (default=)
+Server Parameters:
+  X509Key        - Path to the key of the X509 certificate in PEM format
+                   (default=)
+  X509Cert       - Path to the X509 certificate in PEM format (default=)
+  Password       - Obfuscated binary encoding of the password which clients
+                   must supply to access the server (default=)
+  rfbauth        - Alias for PasswordFile
+  PasswordFile   - Password file for VNC authentication (default=)
+  SecurityTypes  - Specify which security scheme to use (None, VncAuth, Plain,
+                   TLSNone, TLSVnc, TLSPlain, X509None, X509Vnc, X509Plain)
+                   (default=VncAuth)
+(EE) 
+Fatal server error:
+(EE) Unrecognized option: -startup
+(EE) 
+Unrecognized option: -startup
+use: X [:<display>] [option]
+-a #                   default pointer acceleration (factor)
+-ac                    disable access control restrictions
+-audit int             set audit trail level
+-auth file             select authorization file
+-br                    create root window with black background
++bs                    enable any backing store support
+-bs                    disable any backing store support
+-c                     turns off key-click
+c #                    key-click volume (0-100)
+-cc int                default color visual class
+-nocursor              disable the cursor
+-core                  generate core dump on fatal error
+-displayfd fd          file descriptor to write display number to when ready to connect
+-dpi int               screen resolution in dots per inch
+-dpms                  disables VESA DPMS monitor control
+-deferglyphs [none|all|16] defer loading of [no|all|16-bit] glyphs
+-f #                   bell base (0-100)
+-fc string             cursor font
+-fn string             default font name
+-fp string             default font path
+-help                  prints message with these options
++iglx                  Allow creating indirect GLX contexts
+-iglx                  Prohibit creating indirect GLX contexts (default)
+-I                     ignore all remaining arguments
+-ld int                limit data space to N Kb
+-lf int                limit number of open files to N
+-ls int                limit stack space to N Kb
+-nolock                disable the locking mechanism
+-maxclients n          set maximum number of clients (power of two)
+-nolisten string       don't listen on protocol
+-listen string         listen on protocol
+-noreset               don't reset after last client exists
+-background [none]     create root window with no background
+-reset                 reset after last client exists
+-p #                   screen-saver pattern duration (minutes)
+-pn                    accept failure to listen on all ports
+-nopn                  reject failure to listen on all ports
+-r                     turns off auto-repeat
+r                      turns on auto-repeat 
+-render [default|mono|gray|color] set render color alloc policy
+-retro                 start with classic stipple and cursor
+-s #                   screen-saver timeout (minutes)
+-seat string           seat to run on
+-t #                   default pointer threshold (pixels/t)
+-terminate             terminate at server reset
+-to #                  connection time out
+-tst                   disable testing extensions
+ttyxx                  server started from init on /dev/ttyxx
+v                      video blanking for screen-saver
+-v                     screen-saver without video blanking
+-wm                    WhenMapped default backing-store
+-wr                    create root window with white background
+-maxbigreqsize         set maximal bigrequest size 
++xinerama              Enable XINERAMA extension
+-xinerama              Disable XINERAMA extension
+-dumbSched             Disable smart scheduling and threaded input, enable old behavior
+-schedInterval int     Set scheduler interval in msec
+-sigstop               Enable SIGSTOP based startup
++extension name        Enable extension
+-extension name        Disable extension
+-query host-name       contact named host for XDMCP
+-broadcast             broadcast for XDMCP
+-multicast [addr [hops]] IPv6 multicast for XDMCP
+-indirect host-name    contact named host for indirect XDMCP
+-port port-num         UDP port number to send messages to
+-from local-address    specify the local address to connect from
+-once                  Terminate server after one session
+-class display-class   specify display class to send in manage
+-cookie xdm-auth-bits  specify the magic cookie for XDMCP
+-displayID display-id  manufacturer display ID for request
+[+-]accessx [ timeout [ timeout_mask [ feedback [ options_mask] ] ] ]
+                       enable/disable accessx key sequences
+-ardelay               set XKB autorepeat delay
+-arinterval            set XKB autorepeat interval
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+-screen scrn WxHxD     set screen's width, height, depth
+-pixdepths list-of-int support given pixmap depths
++/-render		   turn on/off RENDER extension support(default on)
+-linebias n            adjust thin line pixelization
+-blackpixel n          pixel value for black
+-whitepixel n          pixel value for white
+-shmem                 put framebuffers in shared memory
+-geometry WxH          set screen 0's width, height
+-depth D               set screen 0's depth
+-pixelformat fmt       set pixel format (rgbNNN or bgrNNN)
+-inetd                 has been launched from inetd
+-noclipboard           disable clipboard settings modification via vncconfig utility
+-verbose [n]           verbose startup messages
+-quiet                 minimal startup messages
+-version               show the server version
+
+VNC parameters:
+
+Parameters can be turned on with -<param> or off with -<param>=0
+Parameters which take a value can be specified as -<param> <value>
+Other valid forms are <param>=<value> -<param>=<value> --<param>=<value>
+Parameter names are case-insensitive.  The parameters are:
+
+Global Parameters:
+  ZlibLevel      - Zlib compression level (default=-1)
+  ImprovedHextile - Use improved compression algorithm for Hextile encoding
+                   which achieves better compression ratios by the cost of
+                   using more CPU time (default=1)
+  pam_service    - Alias for PAMService
+  PAMService     - Service name for PAM password validation (default=vnc)
+  PlainUsers     - Users permitted to access via Plain security type (including
+                   TLSPlain, X509Plain etc.) (default=)
+  GnuTLSPriority - GnuTLS priority string that controls the TLS session’s
+                   handshake algorithms (default=NORMAL)
+  MaxCutText     - Maximum permitted length of an incoming clipboard update
+                   (default=262144)
+  RemapKeys      - Comma-separated list of incoming keysyms to remap.  Mappings
+                   are expressed as two hex values, prefixed by 0x, and
+                   separated by -> (default=)
+  BlacklistTimeout - The initial timeout applied when a host is first
+                   black-listed.  The host cannot re-attempt a connection until
+                   the timeout expires. (default=10)
+  BlacklistThreshold - The number of unauthenticated connection attempts
+                   allowed from any individual host before that host is
+                   black-listed (default=5)
+  AlwaysSetDeferUpdateTimer - Always reset the defer update timer on every
+                   change (default=0)
+  DeferUpdate    - Time in milliseconds to defer updates (default=1)
+  QueryConnectTimeout - Number of seconds to show the Accept Connection dialog
+                   before rejecting the connection (default=10)
+  QueryConnect   - Prompt the local user to accept or reject incoming
+                   connections. (default=0)
+  AcceptSetDesktopSize - Accept set desktop size events from clients.
+                   (default=1)
+  SendCutText    - Send clipboard changes to clients. (default=1)
+  AcceptCutText  - Accept clipboard updates from clients. (default=1)
+  AcceptPointerEvents - Accept pointer press and release events from clients.
+                   (default=1)
+  AcceptKeyEvents - Accept key press and release events from clients.
+                   (default=1)
+  DisconnectClients - Disconnect existing clients if an incoming connection is
+                   non-shared. If combined with NeverShared then new
+                   connections will be refused while there is a client active
+                   (default=1)
+  NeverShared    - Never treat incoming connections as shared, regardless of
+                   the client-specified setting (default=0)
+  AlwaysShared   - Always treat incoming connections as shared, regardless of
+                   the client-specified setting (default=0)
+  Protocol3.3    - Always use protocol version 3.3 for backwards compatibility
+                   with badly-behaved clients (default=0)
+  CompareFB      - Perform pixel comparison on framebuffer to reduce
+                   unnecessary updates (0: never, 1: always, 2: auto)
+                   (default=2)
+  ClientWaitTimeMillis - The number of milliseconds to wait for a client which
+                   is no longer responding (default=20000)
+  MaxIdleTime    - Terminate after s seconds of user inactivity (default=0)
+  MaxConnectionTime - Terminate when a client has been connected for s seconds
+                   (default=0)
+  MaxDisconnectionTime - Terminate when no client has been connected for s
+                   seconds (default=0)
+  IdleTimeout    - The number of seconds after which an idle VNC connection
+                   will be dropped (zero means no timeout) (default=0)
+  Log            - Specifies which log output should be directed to which
+                   target logger, and the level of output to log. Format is
+                   <log>:<target>:<level>[, ...]. (default=)
+  UseIPv6        - Use IPv6 for incoming and outgoing connections. (default=1)
+  UseIPv4        - Use IPv4 for incoming and outgoing connections. (default=1)
+  AllowOverride  - Comma separated list of parameters that can be modified
+                   using VNC extension.
+                   (default=desktop,AcceptPointerEvents,SendCutText,AcceptCutText)
+  AvoidShiftNumLock - Avoid fake Shift presses for keys affected by NumLock.
+                   (default=1)
+  interface      - listen on the specified network address (default=all)
+  localhost      - Only allow connections from localhost (default=0)
+  desktop        - Name of VNC desktop (default=x11)
+  rfbport        - TCP port to listen for RFB protocol (default=0)
+  rfbwait        - Alias for ClientWaitTimeMillis
+  httpPort       - TCP port to listen for HTTP (default=0)
+  httpd          - Directory containing files to serve via HTTP (default=)
+Server Parameters:
+  X509Key        - Path to the key of the X509 certificate in PEM format
+                   (default=)
+  X509Cert       - Path to the X509 certificate in PEM format (default=)
+  Password       - Obfuscated binary encoding of the password which clients
+                   must supply to access the server (default=)
+  rfbauth        - Alias for PasswordFile
+  PasswordFile   - Password file for VNC authentication (default=)
+  SecurityTypes  - Specify which security scheme to use (None, VncAuth, Plain,
+                   TLSNone, TLSVnc, TLSPlain, X509None, X509Vnc, X509Plain)
+                   (default=VncAuth)
+(EE) 
+Fatal server error:
+(EE) Unrecognized option: -startup
+(EE) 
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 13:49:57 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+
+Wed Aug 30 13:50:07 2017
+ Connections: accepted: [::1]::33238
+ SConnection: Client needs protocol version 3.8
+ SConnection: Client requests security type VncAuth(2)
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+
+Wed Aug 30 13:50:36 2017
+ Connections: closed: [::1]::33238 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 44
+ EncodeManager:   Tight:
+ EncodeManager:     Solid: 25 rects, 2.2738 Mpixels
+ EncodeManager:            400 B (1:22738.8 ratio)
+ EncodeManager:     Bitmap RLE: 26 rects, 36.992 kpixels
+ EncodeManager:                 1.27637 KiB (1:113.451 ratio)
+ EncodeManager:   Total: 51 rects, 2.31079 Mpixels
+ EncodeManager:          1.66699 KiB (1:5415.22 ratio)
+/usr/bin/xterm: fatal IO error 11 (Resource temporarily unavailable) or KillClient on X server ":1"
+syswrite() on closed filehandle WH at /usr/bin/vncserver line 888.
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 13:51:34 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+xfce4-session: Another session manager is already running
+
+Wed Aug 30 13:51:43 2017
+ Connections: accepted: [::1]::33244
+ SConnection: Client needs protocol version 3.8
+ SConnection: Client requests security type VncAuth(2)
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+
+Wed Aug 30 13:51:53 2017
+ Connections: closed: [::1]::33244 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 1
+ EncodeManager:   Tight:
+ EncodeManager:     Solid: 1 rects, 2.28 Mpixels
+ EncodeManager:            16 B (1:570001 ratio)
+ EncodeManager:   Total: 1 rects, 2.28 Mpixels
+ EncodeManager:          16 B (1:570001 ratio)
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 13:59:37 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+/usr/bin/startxfce4: X server already running on display :1
+xfce4-session: Another session manager is already running
+
+Wed Aug 30 13:59:45 2017
+ Connections: accepted: [::1]::33554
+ SConnection: Client needs protocol version 3.8
+ SConnection: Client requests security type VncAuth(2)
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+
+Wed Aug 30 14:01:42 2017
+ Connections: closed: [::1]::33554 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 4
+ EncodeManager:   Tight:
+ EncodeManager:     Solid: 4 rects, 7.44613 Mpixels
+ EncodeManager:            64 B (1:465384 ratio)
+ EncodeManager:   Total: 4 rects, 7.44613 Mpixels
+ EncodeManager:          64 B (1:465384 ratio)
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 14:54:29 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+Failed to connect to session manager: Failed to connect to the session manager: SESSION_MANAGER environment variable not defined
+** Message: couldn't access control socket: /run/user/1000/keyring/control: No such file or directory
+mate-session[5664]: WARNING: Unable to find provider '' of required component 'dock'
+Window manager warning: Log level 16: g_object_set_valist: object class 'MetaFrames' has no property named 'type'
+
+(xfce4-terminal:5663): Gtk-WARNING **: Allocating size to GtkScrollbar 0x560a05316580 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+Failure: Module initialization failed
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+
+** (polkit-mate-authentication-agent-1:5806): WARNING **: Unable to register authentication agent: GDBus.Error:org.freedesktop.PolicyKit1.Error.Failed: An authentication agent already exists for the given subject
+Cannot register authentication agent: GDBus.Error:org.freedesktop.PolicyKit1.Error.Failed: An authentication agent already exists for the given subject
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: lock-dialog-theme
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-command-line
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-application-handlers
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-printing
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-log-out
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-theme-settings
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-print-setup
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-save-to-disk
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: lock-dialog-theme
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-command-line
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-application-handlers
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-printing
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-log-out
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-theme-settings
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-print-setup
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-save-to-disk
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: lock-dialog-theme
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-command-line
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-application-handlers
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-printing
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-log-out
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-theme-settings
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-print-setup
+
+** (mate-screensaver:5785): WARNING **: Config key not handled: disable-save-to-disk
+
+(nm-applet:5800): nm-applet-WARNING **: GDBus.Error:org.freedesktop.NetworkManager.AgentManager.PermissionDenied: An agent with this ID is already registered for this user.
+
+(nm-applet:5800): Gtk-WARNING **: gtk_widget_size_allocate(): attempt to allocate widget with width -1 and height 1
+
+Wed Aug 30 14:54:35 2017
+ Connections: accepted: [::1]::52558
+ SConnection: Client needs protocol version 3.8
+ SConnection: Client requests security type VncAuth(2)
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+
+Wed Aug 30 14:55:57 2017
+ Connections: closed: [::1]::52558 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 2064
+ EncodeManager:   CopyRect:
+ EncodeManager:     Copies: 384 rects, 3.98208 Mpixels
+ EncodeManager:             6 KiB (1:2593.25 ratio)
+ EncodeManager:   Tight:
+ EncodeManager:     Solid: 1.546 krects, 15.2506 Mpixels
+ EncodeManager:            24.1562 KiB (1:2466.88 ratio)
+ EncodeManager:     Bitmap RLE: 221 rects, 189.196 kpixels
+ EncodeManager:                 6.4873 KiB (1:114.321 ratio)
+ EncodeManager:     Indexed RLE: 1.705 krects, 2.90333 Mpixels
+ EncodeManager:                  318.942 KiB (1:35.6213 ratio)
+ EncodeManager:   Tight (JPEG):
+ EncodeManager:     Full Colour: 2.716 krects, 21.9092 Mpixels
+ EncodeManager:                  9.64379 MiB (1:8.66963 ratio)
+ EncodeManager:   Total: 6.572 krects, 44.2344 Mpixels
+ EncodeManager:          9.99104 MiB (1:16.8967 ratio)
+Gdk-Message: mate-session: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: mate-settings-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: marco: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: caja: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: mate-panel: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: mate-screensaver: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: mate-power-manager: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: mate-volume-control-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: nm-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: light-locker: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 15:08:15 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+Killing Xtigervnc process ID 6578...vncconfig: unable to open display ":1"
+Unable to init server: Could not connect: Connection refused
+
+(xfce4-terminal:6592): Gtk-WARNING **: cannot open display: :1
+Unable to init server: Could not connect: Connection refused
+mate-session[6593]: WARNING: Could not make bus activated clients aware of XDG_CURRENT_DESKTOP=MATE environment variable: Failed to connect to socket /tmp/dbus-MoMG48MuxU: Connection refused
+mate-session[6593]: Gdk-CRITICAL: gdk_display_get_name: assertion 'GDK_IS_DISPLAY (display)' failed
+mate-session[6593]: GLib-CRITICAL: g_setenv: assertion 'value != NULL' failed
+mate-session[6593]: WARNING: Could not make bus activated clients aware of DISPLAY=(null) environment variable: Failed to connect to socket /tmp/dbus-MoMG48MuxU: Connection refused
+mate-session[6593]: WARNING: Could not make bus activated clients aware of MATE_DESKTOP_SESSION_ID=this-is-deprecated environment variable: Failed to connect to socket /tmp/dbus-MoMG48MuxU: Connection refused
+mate-session[6593]: dconf-WARNING: failed to commit changes to dconf: Could not connect: Connection refused
+mate-session[6593]: WARNING: Could not make bus activated clients aware of SESSION_MANAGER=local/debian9:@/tmp/.ICE-unix/6593,unix/debian9:/tmp/.ICE-unix/6593 environment variable: Failed to connect to socket /tmp/dbus-MoMG48MuxU: Connection refused
+Unable to init server: Could not connect: Connection refused
+Unable to start login session (and unable to connect to the X server)Could not connect to session bus: Failed to connect to socket /tmp/dbus-MoMG48MuxU: Connection refused success!
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 15:12:29 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+Killing Xtigervnc process ID 6908...vncconfig: unable to open display ":1"
+Unable to init server: Could not connect: Connection refused
+
+(xfce4-terminal:6922): Gtk-WARNING **: cannot open display: :1
+Unable to init server: Could not connect: Connection refused
+mate-session[6923]: WARNING: Could not make bus activated clients aware of XDG_CURRENT_DESKTOP=MATE environment variable: Failed to connect to socket /tmp/dbus-SncufLMvkR: Connection refused
+mate-session[6923]: Gdk-CRITICAL: gdk_display_get_name: assertion 'GDK_IS_DISPLAY (display)' failed
+mate-session[6923]: GLib-CRITICAL: g_setenv: assertion 'value != NULL' failed
+mate-session[6923]: WARNING: Could not make bus activated clients aware of DISPLAY=(null) environment variable: Failed to connect to socket /tmp/dbus-SncufLMvkR: Connection refused
+mate-session[6923]: WARNING: Could not make bus activated clients aware of MATE_DESKTOP_SESSION_ID=this-is-deprecated environment variable: Failed to connect to socket /tmp/dbus-SncufLMvkR: Connection refused
+mate-session[6923]: dconf-WARNING: failed to commit changes to dconf: Could not connect: Connection refused
+mate-session[6923]: WARNING: Could not make bus activated clients aware of SESSION_MANAGER=local/debian9:@/tmp/.ICE-unix/6923,unix/debian9:/tmp/.ICE-unix/6923 environment variable: Failed to connect to socket /tmp/dbus-SncufLMvkR: Connection refused
+Unable to init server: Could not connect: Connection refused
+Unable to start login session (and unable to connect to the X server)Could not connect to session bus: Failed to connect to socket /tmp/dbus-SncufLMvkR: Connection refused success!
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 15:31:00 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+Killing Xtigervnc process ID 9228...vncconfig: unable to open display ":1"
+Unable to init server: Could not connect: Connection refused
+
+(xfce4-terminal:9244): Gtk-WARNING **: cannot open display: :1
+Unable to init server: Could not connect: Connection refused
+mate-session[9245]: WARNING: Could not make bus activated clients aware of XDG_CURRENT_DESKTOP=MATE environment variable: Failed to connect to socket /tmp/dbus-IfECShvOcm: Connection refused
+mate-session[9245]: Gdk-CRITICAL: gdk_display_get_name: assertion 'GDK_IS_DISPLAY (display)' failed
+mate-session[9245]: GLib-CRITICAL: g_setenv: assertion 'value != NULL' failed
+mate-session[9245]: WARNING: Could not make bus activated clients aware of DISPLAY=(null) environment variable: Failed to connect to socket /tmp/dbus-IfECShvOcm: Connection refused
+mate-session[9245]: WARNING: Could not make bus activated clients aware of MATE_DESKTOP_SESSION_ID=this-is-deprecated environment variable: Failed to connect to socket /tmp/dbus-IfECShvOcm: Connection refused
+mate-session[9245]: dconf-WARNING: failed to commit changes to dconf: Could not connect: Connection refused
+mate-session[9245]: WARNING: Could not make bus activated clients aware of SESSION_MANAGER=local/debian9:@/tmp/.ICE-unix/9245,unix/debian9:/tmp/.ICE-unix/9245 environment variable: Failed to connect to socket /tmp/dbus-IfECShvOcm: Connection refused
+Unable to init server: Could not connect: Connection refused
+Unable to start login session (and unable to connect to the X server)Could not connect to session bus: Failed to connect to socket /tmp/dbus-IfECShvOcm: Connection refused success!
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 15:34:52 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+xfce4-terminal: Unknown option "-geometry"
+** Message: couldn't access control socket: /run/user/1000/keyring/control: No such file or directory
+mate-session[9543]: WARNING: Unable to find provider '' of required component 'dock'
+Window manager warning: Log level 16: g_object_set_valist: object class 'MetaFrames' has no property named 'type'
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+
+** (mate-settings-daemon:9598): WARNING **: Disable DEBUG
+process 9666: arguments to dbus_message_new_method_call() were incorrect, assertion "path != NULL" failed in file ../../../dbus/dbus-message.c line 1367.
+This is normally a bug in some application using the D-Bus library.
+
+** (mate-settings-daemon:9598): WARNING **: Disable DEBUG
+
+** (mate-settings-daemon:9598): WARNING **: Disable DEBUG
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: lock-dialog-theme
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-command-line
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-application-handlers
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-printing
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-log-out
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-theme-settings
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-print-setup
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-save-to-disk
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: lock-dialog-theme
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-command-line
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-application-handlers
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-printing
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-log-out
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-theme-settings
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-print-setup
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-save-to-disk
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: lock-dialog-theme
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-command-line
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-application-handlers
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-printing
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-log-out
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-theme-settings
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-print-setup
+
+** (mate-screensaver:9655): WARNING **: Config key not handled: disable-save-to-disk
+*** ERROR ***
+TI:15:34:53	TH:0x55a1d3bfcf90	FI:gpm-manager.c	FN:gpm_manager_systemd_inhibit,1784
+ - Error in dbus - GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Permission denied
+Traceback:
+	mate-power-manager(+0x1900f) [0x55a1d2df700f]
+	mate-power-manager(+0x1185e) [0x55a1d2def85e]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_type_create_instance+0x20b) [0x7fe64dda836b]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(+0x151fb) [0x7fe64dd8a1fb]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_newv+0x1dd) [0x7fe64dd8bc0d]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_new+0x104) [0x7fe64dd8c3c4]
+	mate-power-manager(+0x120e2) [0x55a1d2df00e2]
+	mate-power-manager(+0x7c42) [0x55a1d2de5c42]
+	/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf1) [0x7fe64d1c12b1]
+	mate-power-manager(+0x7fba) [0x55a1d2de5fba]
+
+** (mate-settings-daemon:9598): WARNING **: Disable DEBUG
+
+(nm-applet:9669): nm-applet-WARNING **: GDBus.Error:org.freedesktop.NetworkManager.AgentManager.PermissionDenied: An agent with this ID is already registered for this user.
+
+(mate-panel:9612): Gtk-WARNING **: Allocating size to PanelToplevel 0x5605e463d000 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+
+** (mate-settings-daemon:9598): CRITICAL **: setup_background: assertion 'p->bg == NULL' failed
+
+Wed Aug 30 15:35:35 2017
+ Connections: accepted: [::1]::52982
+
+Wed Aug 30 15:35:36 2017
+ SConnection: Client needs protocol version 3.3
+ SConnection: AuthFailureException: Authentication failure
+ Connections: closed: [::1]::52982 (Authentication failure)
+ EncodeManager: Framebuffer updates: 0
+ EncodeManager:   Total: 0 rects, 0 pixels
+ EncodeManager:          0 B (1:-nan ratio)
+
+Wed Aug 30 15:35:43 2017
+ Connections: accepted: [::1]::52984
+
+Wed Aug 30 15:35:44 2017
+ SConnection: Client needs protocol version 3.3
+ SConnection: AuthFailureException: Authentication failure
+ Connections: closed: [::1]::52984 (Authentication failure)
+ EncodeManager: Framebuffer updates: 0
+ EncodeManager:   Total: 0 rects, 0 pixels
+ EncodeManager:          0 B (1:-nan ratio)
+
+Wed Aug 30 15:35:50 2017
+ Connections: accepted: [::1]::52986
+
+Wed Aug 30 15:35:51 2017
+ SConnection: Client needs protocol version 3.3
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+
+(xfce4-terminal:9815): Gtk-WARNING **: Allocating size to GtkScrollbar 0x5636051e6430 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+
+Wed Aug 30 15:38:03 2017
+ Connections: closed: [::1]::52986 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 1393
+ EncodeManager:   Raw:
+ EncodeManager:     Solid: 49 rects, 522.685 kpixels
+ EncodeManager:            1.99445 MiB (1:1 ratio)
+ EncodeManager:     Bitmap RLE: 45 rects, 33.64 kpixels
+ EncodeManager:                 131.934 KiB (1:1 ratio)
+ EncodeManager:     Indexed RLE: 469 rects, 6.66421 Mpixels
+ EncodeManager:                  25.4273 MiB (1:1 ratio)
+ EncodeManager:     Full Colour: 1.649 krects, 22.9251 Mpixels
+ EncodeManager:                  87.4712 MiB (1:1 ratio)
+ EncodeManager:   Total: 2.212 krects, 30.1456 Mpixels
+ EncodeManager:          115.022 MiB (1:1 ratio)
+
+Wed Aug 30 15:38:14 2017
+ Connections: accepted: [::1]::52998
+
+Wed Aug 30 15:38:15 2017
+ SConnection: Client needs protocol version 3.3
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+
+Wed Aug 30 15:38:24 2017
+ Connections: closed: [::1]::52998 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 40
+ EncodeManager:   CopyRect:
+ EncodeManager:     Copies: 1 rects, 9.374 kpixels
+ EncodeManager:             16 B (1:2344.25 ratio)
+ EncodeManager:   Raw:
+ EncodeManager:     Indexed RLE: 2 rects, 9.59 kpixels
+ EncodeManager:                  37.4844 KiB (1:1 ratio)
+ EncodeManager:     Full Colour: 69 rects, 2.20273 Mpixels
+ EncodeManager:                  8.40353 MiB (1:1 ratio)
+ EncodeManager:   Total: 72 rects, 2.22169 Mpixels
+ EncodeManager:          8.44015 MiB (1:1.00424 ratio)
+
+Wed Aug 30 15:38:42 2017
+ Connections: accepted: [::1]::53004
+
+Wed Aug 30 15:38:43 2017
+ SConnection: Client needs protocol version 3.3
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+Created new window in existing browser session.
+
+(xfce4-terminal:10087): Gtk-WARNING **: Allocating size to GtkScrollbar 0x55ec18478410 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+
+Wed Aug 30 15:39:52 2017
+ Connections: closed: [::1]::53004 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 538
+ EncodeManager:   CopyRect:
+ EncodeManager:     Copies: 103 rects, 12.1974 Mpixels
+ EncodeManager:             1.60938 KiB (1:29606.2 ratio)
+ EncodeManager:   Raw:
+ EncodeManager:     Solid: 52 rects, 2.00175 Mpixels
+ EncodeManager:            7.63665 MiB (1:1 ratio)
+ EncodeManager:     Bitmap RLE: 1 rects, 1.135 kpixels
+ EncodeManager:                 4.44531 KiB (1:1 ratio)
+ EncodeManager:     Indexed RLE: 331 rects, 5.80489 Mpixels
+ EncodeManager:                  22.1477 MiB (1:1 ratio)
+ EncodeManager:     Full Colour: 716 rects, 19.7906 Mpixels
+ EncodeManager:                  75.5033 MiB (1:1 ratio)
+ EncodeManager:   Total: 1.203 krects, 39.7958 Mpixels
+ EncodeManager:          105.294 MiB (1:1.4419 ratio)
+PolicyKit daemon disconnected from the bus.
+We are no longer a registered authentication agent.
+Warning: VNC extension does not support -reset, terminating instead. Use -noreset to prevent termination.
+Gdk-Message: mate-session: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Aug 30 15:42:30 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+** Message: couldn't access control socket: /run/user/1000/keyring/control: No such file or directory
+mate-session[740]: WARNING: Unable to find provider '' of required component 'dock'
+xfce4-terminal: Unknown option "-geometry"
+Window manager warning: Log level 16: g_object_set_valist: object class 'MetaFrames' has no property named 'type'
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+process 897: arguments to dbus_message_new_method_call() were incorrect, assertion "path != NULL" failed in file ../../../dbus/dbus-message.c line 1367.
+This is normally a bug in some application using the D-Bus library.
+*** ERROR ***
+TI:15:42:31	TH:0x55ed58419610	FI:gpm-manager.c	FN:gpm_manager_systemd_inhibit,1784
+ - Error in dbus - GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Permission denied
+Traceback:
+	mate-power-manager(+0x1900f) [0x55ed5642c00f]
+	mate-power-manager(+0x1185e) [0x55ed5642485e]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_type_create_instance+0x20b) [0x7fd5caa7536b]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(+0x151fb) [0x7fd5caa571fb]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_newv+0x1dd) [0x7fd5caa58c0d]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_new+0x104) [0x7fd5caa593c4]
+	mate-power-manager(+0x120e2) [0x55ed564250e2]
+	mate-power-manager(+0x7c42) [0x55ed5641ac42]
+	/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf1) [0x7fd5c9e8e2b1]
+	mate-power-manager(+0x7fba) [0x55ed5641afba]
+
+(mate-volume-control-applet:895): Gtk-WARNING **: gtk_widget_size_allocate(): attempt to allocate widget with width -1 and height 1
+
+Wed Aug 30 15:42:56 2017
+ Connections: accepted: [::1]::51310
+ SConnection: Client needs protocol version 3.3
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+
+Wed Aug 30 15:43:11 2017
+ Connections: closed: [::1]::51310 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 107
+ EncodeManager:   Raw:
+ EncodeManager:     Indexed RLE: 4 rects, 18.144 kpixels
+ EncodeManager:                  70.9219 KiB (1:1 ratio)
+ EncodeManager:     Full Colour: 148 rects, 4.25273 Mpixels
+ EncodeManager:                  16.2246 MiB (1:1 ratio)
+ EncodeManager:   Total: 152 rects, 4.27087 Mpixels
+ EncodeManager:          16.2938 MiB (1:1 ratio)
+
+Thu Aug 31 13:45:17 2017
+ Connections: accepted: [::1]::57376
+
+Thu Aug 31 13:45:18 2017
+ SConnection: Client needs protocol version 3.3
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+
+(xfce4-terminal:10118): Gtk-WARNING **: Allocating size to GtkScrollbar 0x556549cf0410 without calling gtk_widget_get_preferred_width/height(). How does the code know the size to allocate?
+1504212481934	addons.productaddons	ERROR	Request failed certificate checks: [Exception... "SSL is required and URI scheme is not https."  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: resource://gre/modules/CertUtils.jsm :: checkCert :: line 145"  data: no]
+
+(xfce4-terminal:10118): Gdk-CRITICAL **: gdk_window_get_window_type: assertion 'GDK_IS_WINDOW (window)' failed
+
+(process:11284): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(firefox-esr:10822): Gtk-CRITICAL **: IA__gtk_clipboard_set_with_data: assertion 'targets != NULL' failed
+
+Thu Aug 31 13:58:56 2017
+ Connections: closed: [::1]::57376 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 6425
+ EncodeManager:   CopyRect:
+ EncodeManager:     Copies: 1.671 krects, 245.53 Mpixels
+ EncodeManager:             26.1094 KiB (1:36734.7 ratio)
+ EncodeManager:   Raw:
+ EncodeManager:     Solid: 1.917 krects, 22.4812 Mpixels
+ EncodeManager:            85.7808 MiB (1:1 ratio)
+ EncodeManager:     Bitmap RLE: 884 rects, 6.27146 Mpixels
+ EncodeManager:                 23.9338 MiB (1:1 ratio)
+ EncodeManager:     Indexed RLE: 7.398 krects, 91.2769 Mpixels
+ EncodeManager:                  348.278 MiB (1:1 ratio)
+ EncodeManager:     Full Colour: 11.083 krects, 290.83 Mpixels
+ EncodeManager:                  1.08355 GiB (1:1 ratio)
+ EncodeManager:   Total: 22.953 krects, 656.389 Mpixels
+ EncodeManager:          1.53083 GiB (1:1.59749 ratio)
+1504213261749	addons.productaddons	ERROR	Request failed certificate checks: [Exception... "SSL is required and URI scheme is not https."  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: resource://gre/modules/CertUtils.jsm :: checkCert :: line 145"  data: no]
+1504213261816	addons.update-checker	WARN	Update manifest for loop@mozilla.org did not contain an updates property
+1504213261863	addons.update-checker	WARN	Update manifest for langpack-ru@firefox-esr.mozilla.org did not contain an updates property
+1504213261906	addons.update-checker	WARN	Update manifest for langpack-es-MX@firefox-esr.mozilla.org did not contain an updates property
+1504213261912	addons.update-checker	WARN	Update manifest for langpack-is@firefox-esr.mozilla.org did not contain an updates property
+1504213261918	addons.update-checker	WARN	Update manifest for langpack-da@firefox-esr.mozilla.org did not contain an updates property
+1504213261924	addons.update-checker	WARN	Update manifest for langpack-nb-NO@firefox-esr.mozilla.org did not contain an updates property
+1504213261930	addons.update-checker	WARN	Update manifest for langpack-es-ES@firefox-esr.mozilla.org did not contain an updates property
+1504213261935	addons.update-checker	WARN	Update manifest for langpack-el@firefox-esr.mozilla.org did not contain an updates property
+1504213261954	addons.update-checker	WARN	Update manifest for langpack-cy@firefox-esr.mozilla.org did not contain an updates property
+1504213261960	addons.update-checker	WARN	Update manifest for langpack-th@firefox-esr.mozilla.org did not contain an updates property
+1504213261966	addons.update-checker	WARN	Update manifest for langpack-fr@firefox-esr.mozilla.org did not contain an updates property
+1504213261972	addons.update-checker	WARN	Update manifest for langpack-cs@firefox-esr.mozilla.org did not contain an updates property
+1504213261977	addons.update-checker	WARN	Update manifest for langpack-ca@firefox-esr.mozilla.org did not contain an updates property
+1504213261983	addons.update-checker	WARN	Update manifest for langpack-kk@firefox-esr.mozilla.org did not contain an updates property
+1504213261996	addons.update-checker	WARN	Update manifest for langpack-ga-IE@firefox-esr.mozilla.org did not contain an updates property
+1504213262001	addons.update-checker	WARN	Update manifest for langpack-pl@firefox-esr.mozilla.org did not contain an updates property
+1504213262006	addons.update-checker	WARN	Update manifest for langpack-fa@firefox-esr.mozilla.org did not contain an updates property
+1504213262012	addons.update-checker	WARN	Update manifest for langpack-mr@firefox-esr.mozilla.org did not contain an updates property
+1504213262017	addons.update-checker	WARN	Update manifest for langpack-vi@firefox-esr.mozilla.org did not contain an updates property
+1504213262022	addons.update-checker	WARN	Update manifest for langpack-en-GB@firefox-esr.mozilla.org did not contain an updates property
+1504213262040	addons.update-checker	WARN	Update manifest for langpack-ta@firefox-esr.mozilla.org did not contain an updates property
+1504213262045	addons.update-checker	WARN	Update manifest for langpack-es-AR@firefox-esr.mozilla.org did not contain an updates property
+1504213262051	addons.update-checker	WARN	Update manifest for langpack-eo@firefox-esr.mozilla.org did not contain an updates property
+1504213262056	addons.update-checker	WARN	Update manifest for langpack-tr@firefox-esr.mozilla.org did not contain an updates property
+1504213262061	addons.update-checker	WARN	Update manifest for langpack-de@firefox-esr.mozilla.org did not contain an updates property
+1504213262066	addons.update-checker	WARN	Update manifest for langpack-en-ZA@firefox-esr.mozilla.org did not contain an updates property
+1504213262085	addons.update-checker	WARN	Update manifest for langpack-km@firefox-esr.mozilla.org did not contain an updates property
+1504213262090	addons.update-checker	WARN	Update manifest for langpack-eu@firefox-esr.mozilla.org did not contain an updates property
+1504213262095	addons.update-checker	WARN	Update manifest for langpack-gu-IN@firefox-esr.mozilla.org did not contain an updates property
+1504213262102	addons.update-checker	WARN	Update manifest for langpack-lt@firefox-esr.mozilla.org did not contain an updates property
+1504213262107	addons.update-checker	WARN	Update manifest for langpack-et@firefox-esr.mozilla.org did not contain an updates property
+1504213262113	addons.update-checker	WARN	Update manifest for langpack-it@firefox-esr.mozilla.org did not contain an updates property
+1504213262131	addons.update-checker	WARN	Update manifest for langpack-nl@firefox-esr.mozilla.org did not contain an updates property
+1504213262136	addons.update-checker	WARN	Update manifest for langpack-pt-PT@firefox-esr.mozilla.org did not contain an updates property
+1504213262141	addons.update-checker	WARN	Update manifest for langpack-bn-IN@firefox-esr.mozilla.org did not contain an updates property
+1504213262147	addons.update-checker	WARN	Update manifest for langpack-zh-TW@firefox-esr.mozilla.org did not contain an updates property
+1504213262152	addons.update-checker	WARN	Update manifest for langpack-bs@firefox-esr.mozilla.org did not contain an updates property
+1504213262157	addons.update-checker	WARN	Update manifest for langpack-bg@firefox-esr.mozilla.org did not contain an updates property
+1504213262175	addons.update-checker	WARN	Update manifest for langpack-sl@firefox-esr.mozilla.org did not contain an updates property
+1504213262180	addons.update-checker	WARN	Update manifest for langpack-pt-BR@firefox-esr.mozilla.org did not contain an updates property
+1504213262186	addons.update-checker	WARN	Update manifest for langpack-si@firefox-esr.mozilla.org did not contain an updates property
+1504213262191	addons.update-checker	WARN	Update manifest for langpack-fi@firefox-esr.mozilla.org did not contain an updates property
+1504213262197	addons.update-checker	WARN	Update manifest for langpack-ko@firefox-esr.mozilla.org did not contain an updates property
+1504213262202	addons.update-checker	WARN	Update manifest for langpack-zh-CN@firefox-esr.mozilla.org did not contain an updates property
+1504213262219	addons.update-checker	WARN	Update manifest for langpack-ar@firefox-esr.mozilla.org did not contain an updates property
+1504213262225	addons.update-checker	WARN	Update manifest for langpack-sq@firefox-esr.mozilla.org did not contain an updates property
+1504213262230	addons.update-checker	WARN	Update manifest for langpack-sk@firefox-esr.mozilla.org did not contain an updates property
+1504213262236	addons.update-checker	WARN	Update manifest for langpack-bn-BD@firefox-esr.mozilla.org did not contain an updates property
+1504213262241	addons.update-checker	WARN	Update manifest for langpack-ro@firefox-esr.mozilla.org did not contain an updates property
+1504213262246	addons.update-checker	WARN	Update manifest for langpack-te@firefox-esr.mozilla.org did not contain an updates property
+1504213262264	addons.update-checker	WARN	Update manifest for langpack-sv-SE@firefox-esr.mozilla.org did not contain an updates property
+1504213262269	addons.update-checker	WARN	Update manifest for langpack-uk@firefox-esr.mozilla.org did not contain an updates property
+1504213262274	addons.update-checker	WARN	Update manifest for langpack-he@firefox-esr.mozilla.org did not contain an updates property
+1504213262280	addons.update-checker	WARN	Update manifest for langpack-nn-NO@firefox-esr.mozilla.org did not contain an updates property
+1504213262287	addons.update-checker	WARN	Update manifest for langpack-hu@firefox-esr.mozilla.org did not contain an updates property
+1504213262293	addons.update-checker	WARN	Update manifest for langpack-kn@firefox-esr.mozilla.org did not contain an updates property
+1504213262312	addons.update-checker	WARN	Update manifest for langpack-ja@firefox-esr.mozilla.org did not contain an updates property
+1504213262317	addons.update-checker	WARN	Update manifest for langpack-id@firefox-esr.mozilla.org did not contain an updates property
+1504213262323	addons.update-checker	WARN	Update manifest for langpack-es-CL@firefox-esr.mozilla.org did not contain an updates property
+1504213262328	addons.update-checker	WARN	Update manifest for langpack-hr@firefox-esr.mozilla.org did not contain an updates property
+1504213262336	addons.update-checker	WARN	Update manifest for langpack-be@firefox-esr.mozilla.org did not contain an updates property
+1504213262341	addons.update-checker	WARN	Update manifest for langpack-hi-IN@firefox-esr.mozilla.org did not contain an updates property
+1504213262360	addons.update-checker	WARN	Update manifest for langpack-ast@firefox-esr.mozilla.org did not contain an updates property
+1504213262366	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+1504213262371	addons.update-checker	WARN	Update manifest for langpack-lv@firefox-esr.mozilla.org did not contain an updates property
+1504213262377	addons.update-checker	WARN	Update manifest for langpack-sr@firefox-esr.mozilla.org did not contain an updates property
+1504213262385	addons.update-checker	WARN	Update manifest for langpack-pa-IN@firefox-esr.mozilla.org did not contain an updates property
+1504213262391	addons.update-checker	WARN	Update manifest for langpack-ml@firefox-esr.mozilla.org did not contain an updates property
+1504213262406	addons.update-checker	WARN	Update manifest for langpack-mk@firefox-esr.mozilla.org did not contain an updates property
+1504213262411	addons.update-checker	WARN	Update manifest for langpack-gl@firefox-esr.mozilla.org did not contain an updates property
+
+Thu Aug 31 14:03:26 2017
+ Connections: accepted: [::1]::57846
+
+Thu Aug 31 14:03:27 2017
+ SConnection: Client needs protocol version 3.3
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+1504214582556	addons.productaddons	ERROR	Request failed certificate checks: [Exception... "SSL is required and URI scheme is not https."  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: resource://gre/modules/CertUtils.jsm :: checkCert :: line 145"  data: no]
+
+(firefox-esr:10822): Gtk-CRITICAL **: IA__gtk_clipboard_set_with_data: assertion 'targets != NULL' failed
+1504217154201	addons.productaddons	ERROR	Request failed certificate checks: [Exception... "SSL is required and URI scheme is not https."  nsresult: "0x8000ffff (NS_ERROR_UNEXPECTED)"  location: "JS frame :: resource://gre/modules/CertUtils.jsm :: checkCert :: line 145"  data: no]
+
+(mate-screensaver:889): GLib-CRITICAL **: Source ID 31 was not found when attempting to remove it
+
+Thu Aug 31 15:26:48 2017
+ Connections: closed: [::1]::57846 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 20978
+ EncodeManager:   CopyRect:
+ EncodeManager:     Copies: 838 rects, 169.858 Mpixels
+ EncodeManager:             13.0938 KiB (1:50674.4 ratio)
+ EncodeManager:   Raw:
+ EncodeManager:     Solid: 2.449 krects, 54.0918 Mpixels
+ EncodeManager:            206.372 MiB (1:1 ratio)
+ EncodeManager:     Bitmap RLE: 1.41 krects, 15.5006 Mpixels
+ EncodeManager:                 59.1463 MiB (1:1 ratio)
+ EncodeManager:     Indexed RLE: 25.17 krects, 413.417 Mpixels
+ EncodeManager:                  1.54038 GiB (1:1 ratio)
+ EncodeManager:     Full Colour: 36.769 krects, 1.15605 Gpixels
+ EncodeManager:                  4.30704 GiB (1:1 ratio)
+ EncodeManager:   Total: 66.636 krects, 1.80892 Gpixels
+ EncodeManager:          6.10673 GiB (1:1.10362 ratio)
+
+(mate-screensaver:889): GLib-CRITICAL **: Source ID 389 was not found when attempting to remove it
+
+Thu Aug 31 16:45:18 2017
+ Connections: accepted: [::1]::59920
+ SConnection: Client needs protocol version 3.3
+ VNCSConnST:  Server default pixel format depth 24 (32bpp) little-endian rgb888
+ VNCSConnST:  Client pixel format depth 24 (32bpp) little-endian rgb888
+console.error: LastPass: Free Password Manager: 
+  Message: TypeError: g_tabs.activeTab is null
+  Stack:
+    e.onTabClosed/t@resource://gre/modules/commonjs/toolkit/loader.js -> resource://support-at-lastpass-dot-com/lib/main.js:41:4323
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:112:9
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:112:9
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:123:45
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+tabEmit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/tabs/tab-firefox.js:261:31
+tabEventListener@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/tabs/tab-firefox.js:316:23
+windowClosed@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/tabs/tab-firefox.js:270:5
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:112:9
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+initialize/<.onUntrack@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/windows/observer.js:28:9
+_unregWindow@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/deprecated/window-utils.js:112:9
+observe@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/deprecated/window-utils.js:153:7
+
+console.error: LastPass: Free Password Manager: 
+  Message: TypeError: g_tabs.activeTab is null
+  Stack:
+    e.onTabClosed/t@resource://gre/modules/commonjs/toolkit/loader.js -> resource://support-at-lastpass-dot-com/lib/main.js:41:4323
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:112:9
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:112:9
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:123:45
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+tabEmit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/tabs/tab-firefox.js:261:31
+tabEventListener@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/tabs/tab-firefox.js:316:23
+windowClosed@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/tabs/tab-firefox.js:270:5
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:112:9
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+initialize/<.onUntrack@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/windows/observer.js:28:9
+_unregWindow@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/deprecated/window-utils.js:112:9
+observe@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/deprecated/window-utils.js:153:7
+
+console.error: LastPass: Free Password Manager: 
+  Message: TypeError: g_tabs.activeTab is null
+  Stack:
+    e.onTabClosed/t@resource://gre/modules/commonjs/toolkit/loader.js -> resource://support-at-lastpass-dot-com/lib/main.js:41:4323
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:112:9
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:112:9
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:123:45
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+tabEmit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/tabs/tab-firefox.js:261:31
+tabEventListener@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/tabs/tab-firefox.js:316:23
+windowClosed@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/tabs/tab-firefox.js:270:5
+emitOnObject@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:112:9
+emit@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/event/core.js:89:38
+initialize/<.onUntrack@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/windows/observer.js:28:9
+_unregWindow@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/deprecated/window-utils.js:112:9
+observe@resource://gre/modules/commonjs/toolkit/loader.js -> resource://gre/modules/commonjs/sdk/deprecated/window-utils.js:153:7
+
+
+Thu Aug 31 16:51:25 2017
+ Connections: closed: [::1]::59920 (Clean disconnection)
+ EncodeManager: Framebuffer updates: 294
+ EncodeManager:   Raw:
+ EncodeManager:     Solid: 118 rects, 5.4191 Mpixels
+ EncodeManager:            20.6736 MiB (1:1 ratio)
+ EncodeManager:     Bitmap RLE: 65 rects, 304.912 kpixels
+ EncodeManager:                 1.16389 MiB (1:1 ratio)
+ EncodeManager:     Indexed RLE: 219 rects, 4.28483 Mpixels
+ EncodeManager:                  16.3479 MiB (1:1 ratio)
+ EncodeManager:     Full Colour: 411 rects, 12.116 Mpixels
+ EncodeManager:                  46.2236 MiB (1:1 ratio)
+ EncodeManager:   Total: 813 rects, 22.1249 Mpixels
+ EncodeManager:          84.409 MiB (1:1 ratio)
+
+(mate-screensaver:889): GLib-CRITICAL **: Source ID 466 was not found when attempting to remove it
+XIO:  fatal IO error 11 (Resource temporarily unavailable) on X server ":1"
+      after 496 requests (496 known processed) with 0 events remaining.
+Gdk-Message: mate-settings-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: mate-session: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: marco: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: mate-panel: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: caja: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: mate-screensaver: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: mate-volume-control-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: light-locker: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: polkit-mate-authentication-agent-1: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Gdk-Message: nm-applet: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Sep  6 10:09:38 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+** Message: couldn't access control socket: /run/user/1000/keyring/control: No such file or directory
+mate-session[1015]: WARNING: Unable to find provider '' of required component 'dock'
+xfce4-terminal: Unknown option "-geometry"
+Window manager warning: Log level 16: g_object_set_valist: object class 'MetaFrames' has no property named 'type'
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+process 1383: arguments to dbus_message_new_method_call() were incorrect, assertion "path != NULL" failed in file ../../../dbus/dbus-message.c line 1367.
+This is normally a bug in some application using the D-Bus library.
+*** ERROR ***
+TI:10:09:39	TH:0x561184204790	FI:gpm-manager.c	FN:gpm_manager_systemd_inhibit,1784
+ - Error in dbus - GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Permission denied
+Traceback:
+	mate-power-manager(+0x1900f) [0x5611830a400f]
+	mate-power-manager(+0x1185e) [0x56118309c85e]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_type_create_instance+0x20b) [0x7f93a6dbe36b]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(+0x151fb) [0x7f93a6da01fb]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_newv+0x1dd) [0x7f93a6da1c0d]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_new+0x104) [0x7f93a6da23c4]
+	mate-power-manager(+0x120e2) [0x56118309d0e2]
+	mate-power-manager(+0x7c42) [0x561183092c42]
+	/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf1) [0x7f93a61d72b1]
+	mate-power-manager(+0x7fba) [0x561183092fba]
+
+** (mate-settings-daemon:1148): WARNING **: Disable DEBUG
+Warning: VNC extension does not support -reset, terminating instead. Use -noreset to prevent termination.
+Gdk-Message: mate-session: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Sep  6 10:17:54 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+** Message: couldn't access control socket: /run/user/1000/keyring/control: No such file or directory
+xfce4-terminal: Unknown option "-geometry"
+mate-session[922]: WARNING: Unable to find provider '' of required component 'dock'
+Window manager warning: Log level 16: g_object_set_valist: object class 'MetaFrames' has no property named 'type'
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+process 1120: arguments to dbus_message_new_method_call() were incorrect, assertion "path != NULL" failed in file ../../../dbus/dbus-message.c line 1367.
+This is normally a bug in some application using the D-Bus library.
+*** ERROR ***
+TI:10:17:55	TH:0x55e94975e790	FI:gpm-manager.c	FN:gpm_manager_systemd_inhibit,1784
+ - Error in dbus - GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Permission denied
+Traceback:
+	mate-power-manager(+0x1900f) [0x55e94903e00f]
+	mate-power-manager(+0x1185e) [0x55e94903685e]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_type_create_instance+0x20b) [0x7fd849b1d36b]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(+0x151fb) [0x7fd849aff1fb]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_newv+0x1dd) [0x7fd849b00c0d]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_new+0x104) [0x7fd849b013c4]
+	mate-power-manager(+0x120e2) [0x55e9490370e2]
+	mate-power-manager(+0x7c42) [0x55e94902cc42]
+	/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf1) [0x7fd848f362b1]
+	mate-power-manager(+0x7fba) [0x55e94902cfba]
+Gdk-Message: mate-settings-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Warning: VNC extension does not support -reset, terminating instead. Use -noreset to prevent termination.
+Gdk-Message: The application 'mate-session' lost its connection to the display :1;
+most likely the X server was shut down or you killed/destroyed
+the application.
+
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Sep  6 10:20:49 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+** Message: couldn't access control socket: /run/user/1000/keyring/control: No such file or directory
+mate-session[973]: WARNING: Unable to find provider '' of required component 'dock'
+xfce4-terminal: Unknown option "-geometry"
+Window manager warning: Log level 16: g_object_set_valist: object class 'MetaFrames' has no property named 'type'
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+process 1139: arguments to dbus_message_new_method_call() were incorrect, assertion "path != NULL" failed in file ../../../dbus/dbus-message.c line 1367.
+This is normally a bug in some application using the D-Bus library.
+*** ERROR ***
+TI:10:20:50	TH:0x556e28b61610	FI:gpm-manager.c	FN:gpm_manager_systemd_inhibit,1784
+ - Error in dbus - GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Permission denied
+Traceback:
+	mate-power-manager(+0x1900f) [0x556e26cf000f]
+	mate-power-manager(+0x1185e) [0x556e26ce885e]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_type_create_instance+0x20b) [0x7f5608a5236b]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(+0x151fb) [0x7f5608a341fb]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_newv+0x1dd) [0x7f5608a35c0d]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_new+0x104) [0x7f5608a363c4]
+	mate-power-manager(+0x120e2) [0x556e26ce90e2]
+	mate-power-manager(+0x7c42) [0x556e26cdec42]
+	/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf1) [0x7f5607e6b2b1]
+	mate-power-manager(+0x7fba) [0x556e26cdefba]
+Gdk-Message: mate-settings-daemon: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+Warning: VNC extension does not support -reset, terminating instead. Use -noreset to prevent termination.
+Gdk-Message: mate-session: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
+
+Xvnc TigerVNC 1.7.0 - built Apr  9 2017 14:38:13
+Copyright (C) 1999-2016 TigerVNC Team and many others (see README.txt)
+See http://www.tigervnc.org for information on TigerVNC.
+Underlying X server release 11903000, The X.Org Foundation
+
+
+Wed Sep  6 10:26:27 2017
+ vncext:      VNC extension running!
+ vncext:      Listening for VNC connections on local interface(s), port 5901
+ vncext:      created VNC server for screen 0
+** Message: couldn't access control socket: /run/user/1000/keyring/control: No such file or directory
+mate-session[1035]: WARNING: Unable to find provider '' of required component 'dock'
+xfce4-terminal: Unknown option "-geometry"
+Window manager warning: Log level 16: g_object_set_valist: object class 'MetaFrames' has no property named 'type'
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
+process 1189: arguments to dbus_message_new_method_call() were incorrect, assertion "path != NULL" failed in file ../../../dbus/dbus-message.c line 1367.
+This is normally a bug in some application using the D-Bus library.
+*** ERROR ***
+TI:10:26:28	TH:0x5610de796790	FI:gpm-manager.c	FN:gpm_manager_systemd_inhibit,1784
+ - Error in dbus - GDBus.Error:org.freedesktop.DBus.Error.AccessDenied: Permission denied
+Traceback:
+	mate-power-manager(+0x1900f) [0x5610dd4b600f]
+	mate-power-manager(+0x1185e) [0x5610dd4ae85e]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_type_create_instance+0x20b) [0x7f230c6ed36b]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(+0x151fb) [0x7f230c6cf1fb]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_newv+0x1dd) [0x7f230c6d0c0d]
+	/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0(g_object_new+0x104) [0x7f230c6d13c4]
+	mate-power-manager(+0x120e2) [0x5610dd4af0e2]
+	mate-power-manager(+0x7c42) [0x5610dd4a4c42]
+	/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xf1) [0x7f230bb062b1]
+	mate-power-manager(+0x7fba) [0x5610dd4a4fba]
+
+(mate-volume-control-applet:1188): Gtk-WARNING **: gtk_widget_size_allocate(): attempt to allocate widget with width -1 and height 1
+
+(mate-volume-control-applet:1188): Gdk-CRITICAL **: gdk_window_thaw_toplevel_updates: assertion 'window->update_and_descendants_freeze_count > 0' failed
+Warning: VNC extension does not support -reset, terminating instead. Use -noreset to prevent termination.
+Gdk-Message: mate-session: Fatal IO error 11 (Resource temporarily unavailable) on X server :1.
+
