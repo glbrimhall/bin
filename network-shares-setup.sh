@@ -20,7 +20,7 @@ NFS_SHARES="\
 nfs_share1"
 
 SMB_SHARES="\
-smb_share1"
+data1"
 
 if [ "$SMB_DIR" != "" ]; then
 
@@ -36,7 +36,7 @@ if [ "$SMB_DIR" != "" ]; then
     fi
     
     echo >> /etc/fstab
-    echo "//$NAS/$SMB $SMB_DIR/$SMB cifs vers=2.1,serverino,credentials=/.smbcredentials,uid=333,gid=333,file_mode=0664,dir_mode=0775,nounix,iocharset=utf8,sec=ntlmssp 0 0" >> /etc/fstab
+    echo "//$NAS/$SMB $SMB_DIR/$SMB cifs noauto,serverino,credentials=/root/.smbcredentials,uid=5,gid=100,file_mode=0664,dir_mode=0775,iocharset=utf8,sec=ntlmssp 0 0" >> /etc/fstab
     
     mount $SMB_DIR/$SMB
   
