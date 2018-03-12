@@ -1,1 +1,3 @@
-docker logs $1
+#!/bin/sh
+
+docker logs --follow $1
