@@ -1,2 +1,4 @@
 #!/bin/sh
-docker-compose up $1
+docker-compose up -d $1
+dlog.sh
+

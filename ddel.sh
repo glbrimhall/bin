@@ -1,6 +1,8 @@
 #!/bin/bash
 
-. $HOME/bin/docker-default-container.sh
+if [ -f "$HOME/bin/docker-default-container.sh" ]; then
+  . $HOME/bin/docker-default-container.sh
+fi
 
 CONTAINER=${1:-$DEFAULT_CONTAINER}
 
