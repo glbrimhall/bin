@@ -7,6 +7,6 @@ if [ "$?" != "0" ]; then
 fi
 
 cd "$ROOT_DIR"
-git reset
-git checkout .
+git reset --hard
+#git checkout .
 git clean -fdx
