@@ -1,4 +1,7 @@
 #!/bin/sh
+
+FILE=$1
+
 ROOT_DIR="`git rev-parse --show-toplevel`"
 
 if [ "$?" != "0" ]; then
@@ -7,6 +10,6 @@ if [ "$?" != "0" ]; then
 fi
 
 cd "$ROOT_DIR"
-git reset --hard
+git reset --hard $FILE
 #git checkout .
-git clean -fdx
+git clean -fdx $FILE
