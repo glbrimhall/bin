@@ -130,5 +130,7 @@ alias df='df -h'
 alias cdc='cd ~/github/filesender-phpfpm/compose/devel'
 alias cda='cd /home/glbrimhall/github/archivematica/compose/shibboleth'
 
-export AM_PIPELINE_DATA=/home/glbrimhall/amatica/pipeline
-export SS_LOCATION_DATA=/home/glbrimhall/amatica/storage
+# Enable pyenv
+#export PATH="/home/glbrimhall/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
