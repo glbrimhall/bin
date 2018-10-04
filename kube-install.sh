@@ -24,3 +24,6 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/s
 kubectl proxy
 
 # Browses to http://kube1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/
+
+# Create a user to access the dashboard at:
+# https://github.com/kubernetes/dashboard/wiki/Creating-sample-user
