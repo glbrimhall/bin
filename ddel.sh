@@ -7,7 +7,8 @@ fi
 CONTAINER=${1:-$DEFAULT_CONTAINER}
 
 if [ -f docker-compose.yml ] && [ "$1" = "" ]; then
-  docker-compose rm -fsv
+  docker-compose down --volumes --remove-orphans --rmi local
+  #docker-compose rm -fsv
   echo "y" | docker volume prune
 else
   docker stop $CONTAINER
