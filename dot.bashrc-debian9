@@ -128,7 +128,4 @@ alias ll='ls -l'
 alias lr='ls -R'
 alias df='df -h'
 alias cdc='cd ~/github/filesender-phpfpm/compose/devel'
-alias cda='cd /home/glbrimhall/github/ual-am-build/archivematica/compose'
-
-export AM_PIPELINE_DATA=/home/glbrimhall/amatica/pipeline
-export SS_LOCATION_DATA=/home/glbrimhall/amatica/storage
+alias cda='cd /home/geoff/github/archivematica/compose/shibboleth'
