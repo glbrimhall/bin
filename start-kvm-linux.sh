@@ -1,10 +1,35 @@
 #!/bin/sh
 qemu-system-x86_64 \
- -enable-kvm \
- -name guest=xfmint18.1,debug-threads=on \
- -S \
- -object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-1-xfmint18.1/master-key.aes \
- -machine pc-i440fx-2.8,accel=kvm,usb=off,dump-guest-core=off \
+    -enable-kvm \
+    -name guest=xfmint18.1,debug-threads=on \
+    -S \
+    -object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-1-xfmint18.1/master-key.aes \
+    -machine  -enable-kvm \
+    -name 18.1,debug-threads=on \
+    -S \
+    -object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-1-xfmint18.1/master-key.aes \
+    -machine pc-i440fx-2.8,accel=kvm,usb=off,dump-guest-core=off \
+    -cpu Opteron_G5,+vme,+ht,+monitor,+osxsave,+bmi1,+mmxext,+fxsr_opt,+cmp_legacy,+extapic,+cr8legacy,+osvw,+ibs,+skinit,+wdt,+lwp,+tce,+nodeid_msr,+topoext,+perfctr_core,+perfctr_nb \
+    -m 2048 \
+    -realtime mlock=off \
+    18.1,debug-threads=on \
+    -S \
+    -object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-1-xfmint18.1/master-key.aes \
+    -machine pc-i440fx-2.8,accel=kvm,usb=off,dump-guest-core=off \
+    -cpu Opteron_G5,+vme,+ht,+monitor,+osxsave,+bmi1,+mmxext,+fxsr_opt,+cmp_legacy,+extapic,+cr8legacy,+osvw,+ibs,+skinit,+wdt,+lwp,+tce,+nodeid_msr,+topoext,+perfctr_core,+perfctr_nb \
+    - 2048 \
+    -realtime mlock=off \
+    18.1,debug-threads=on \
+    -S \
+    m-object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-1-xfmint18.1/master-key.aes \
+    -machine pc-i440fx-2.8,accel=kvm,usb=off,dump-guest-core=off \
+    -cpu Opteron_G5,+vme,+ht,+monitor,+osxsave,+bmi1,+mmxext,+fxsr_opt,+cmp_legacy,+extapic,+cr8legacy,+osvw,+ibs,+skinit,+wdt,+lwp,+tce,+nodeid_msr,+topoext,+perfctr_core,+perfctr_nb \
+    -m 2048 \
+    -realtime mlock=off \
+    -smp    -smp    -smpguest=xfmint18.1,debug-threads=on \
+    -S \
+    -object secret,id=masterKey0,format=raw,file=/var/lib/libvirt/qemu/domain-1-xfmint18.1/master-key.aes \
+    -machine pc-i440fx-2.8,accel=kvm,usb=off,dump-guest-core=off \
  -cpu Opteron_G5,+vme,+ht,+monitor,+osxsave,+bmi1,+mmxext,+fxsr_opt,+cmp_legacy,+extapic,+cr8legacy,+osvw,+ibs,+skinit,+wdt,+lwp,+tce,+nodeid_msr,+topoext,+perfctr_core,+perfctr_nb \
  -m 2048 \
  -realtime mlock=off \
