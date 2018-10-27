@@ -11,7 +11,7 @@ git clone https://github.com/kubernetes-incubator/kubespray.git
 cd kubespray
 sudo pip install -r requirements.txt
 
-ansible-playbook -u glbrimhall --become -i inventory/kube-cluster/hosts.ini cluster.yml  
+ansible-playbook -u admin --become -i inventory/kube-cluster/hosts.ini cluster.yml  
 
 # Check health:
 

@@ -129,6 +129,8 @@ alias lr='ls -R'
 alias df='df -h'
 alias cdc='cd ~/github/filesender-phpfpm/compose/devel'
 alias cda='cd /home/glbrimhall/github/archivematica/compose/shibboleth'
+alias 7za='7az -mm=BZip2'
+alias vim='vim -p'
 
 # Enable pyenv
 #export PATH="/home/glbrimhall/.pyenv/bin:$PATH"

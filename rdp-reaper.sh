@@ -1,1 +1,1 @@
-rdesktop -g 1600x1200 -u muse reaper
+rdesktop -g 1920x1080 -u muse reaper
