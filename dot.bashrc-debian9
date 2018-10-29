@@ -134,3 +134,7 @@ alias cda='cd /home/glbrimhall/github/archivematica/compose/shibboleth'
 #export PATH="/home/glbrimhall/.pyenv/bin:$PATH"
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
+
+stty -ixon
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
