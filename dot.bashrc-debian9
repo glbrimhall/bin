@@ -122,13 +122,15 @@ if [ "`which colordiff`" != "" ]; then
     alias diff=colordiff
 fi
 
-alias e='emacs'
+alias vim='vim -p'
+alias e='vim'
 alias less='less -R'
 alias ll='ls -l'
 alias lr='ls -R'
 alias df='df -h'
 alias cdc='cd ~/github/filesender-phpfpm/compose/devel'
 alias cda='cd /home/glbrimhall/github/archivematica/compose/shibboleth'
+alias sd='systemctl daemon-reload'
 
 # Enable pyenv
 #export PATH="/home/glbrimhall/.pyenv/bin:$PATH"
@@ -137,4 +139,3 @@ alias cda='cd /home/glbrimhall/github/archivematica/compose/shibboleth'
 
 stty -ixon
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
