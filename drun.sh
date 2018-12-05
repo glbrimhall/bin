@@ -15,7 +15,10 @@ docker start "$CONTAINER"
 
 if [ "$SHELL" = "bash" ] || [ "$SHELL" = "sh" ]; then
 
-    docker exec -it "$CONTAINER" $SHELL -i
+    if [ "xx$MSYSTEM" != "xx" ]; then
+       WINPTY=winpty
+    fi
+    $WINPTY docker exec -it "$CONTAINER" $SHELL -i
 
 else
 
