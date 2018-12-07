@@ -15,9 +15,19 @@ mv /home /home.orig
 ln -s /win/Users/ /home
 
 cd /root
-ln -s /home/gbrimhall gbrimhall
+rm -vfr /root/.SpaceVim.d
+ln -vs /home/$USER/.SpaceVim.d/ .SpaceVim.d
+ln -vs /home/$USER $USER
 
-foreach ENTRY in $LNENTRIES; do
-  ln -s /home/$USER/$ENTRY $ENTRY
+for ENTRY in $LNENTRIES; do
+  ln -vs /home/$USER/$ENTRY $ENTRY
 done
+
+cat <<EOF >> /root/.bashrc
+
+stty -ixon
+
+export PATH="/root/bin:$PATH"
+
+EOF
 
