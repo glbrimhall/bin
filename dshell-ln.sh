@@ -7,6 +7,7 @@ Documents \
 Downloads \
 abr \
 bin \
+.ssh \
 .gitconfig \
 github"
 
