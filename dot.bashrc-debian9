@@ -2,6 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+if [ "xx$MSYSTEM" != "xx" ]; then 
+  return 
+fi
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -49,7 +53,7 @@ if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 	# We have color support; assume it's compliant with Ecma-48
 	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
+# a case would tend to support setf rather than setaf.)
 	color_prompt=yes
     else
 	color_prompt=
@@ -122,7 +126,8 @@ if [ "`which colordiff`" != "" ]; then
     alias diff=colordiff
 fi
 
-alias e='emacs'
+alias vim='vim -p'
+alias e='vim'
 alias less='less -R'
 alias ll='ls -l'
 alias lr='ls -R'
@@ -130,9 +135,12 @@ alias df='df -h'
 alias cdc='cd ~/github/filesender-phpfpm/compose/devel'
 alias cda='cd /home/glbrimhall/github/archivematica/compose/shibboleth'
 alias 7za='7az -mm=BZip2'
-alias vim='vim -p'
+alias sd='systemctl daemon-reload'
 
 # Enable pyenv
 #export PATH="/home/glbrimhall/.pyenv/bin:$PATH"
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
+
+stty -ixon
+
