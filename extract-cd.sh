@@ -13,4 +13,4 @@ CMD="abcde \
 -N"
 
 echo "EXEC: cd ~/Music; $CMD; cd --"
-#cd ~/Music ; `$CMD` ; cd --
+cd ~/Music ; `$CMD` ; cd --
