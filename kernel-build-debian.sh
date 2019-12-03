@@ -16,4 +16,6 @@ cd linux-5.3.9
 fakeroot debian/rules source
 fakeroot make -f debian/rules.gen setup_amd64_none_amd64
 make -C debian/build/build_amd64_none_amd64 menuconfig
-fakeroot make -j `nproc` -f debian/rules.gen binary-arch_amd64_none_amd64
+#fakeroot debian/rules debian/control-real
+fakeroot make -j `nproc` -f debian/rules.gen binary-arch_amd64_none_amd64 > ../debian.rules.out 2>&1 &
+
