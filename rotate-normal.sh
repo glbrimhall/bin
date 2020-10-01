@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # From `xrandr`
-SCREEN="eDP-1-1"
+SCREEN="eDP-1"
+#SCREEN="eDP-1-1"
 # From `xinput --list`
 KEYBOARD="AT Translated Set 2 keyboard"
 TOUCHSCREEN="SYNAPTICS Synaptics Touch Digitizer V04"
