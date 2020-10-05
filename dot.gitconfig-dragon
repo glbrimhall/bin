@@ -9,3 +9,5 @@
 	ui = true
 [core]
 	pager = less -r
+[pull]
+	rebase = false
