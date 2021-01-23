@@ -9,6 +9,7 @@
 
 MACVLN=macvlan0
 TESTHOST=www.google.com
+HWADDR="address 26:b7:fc:b3:8c:ae"
 
 # ------------
 # wait for network availability
@@ -43,7 +44,8 @@ echo "GATEWAY=$GATEWAY"
 # setting up $MACVLN interface
 # ------------
 
-ip link add link $HWLINK $MACVLN type macvlan mode bridge
+#ip link add link $HWLINK $MACVLN type macvlan mode bridge
+ip link add link $HWLINK $HWADDR $MACVLN type macvlan mode bridge
 ip address add $IP dev $MACVLN
 ip link set dev $MACVLN up
 
