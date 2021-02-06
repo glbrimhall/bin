@@ -1,0 +1,7 @@
+<advancedsettings version="1.0">
+     <audiooutput>
+          <audiodevice>ALSA:hdmi:CARD=NVidia,DEV=0</audiodevice>
+          <channels>10</channels>
+          <passthroughdevice>ALSA:hdmi:CARD=NVidia,DEV=0</passthroughdevice>
+     </audiooutput>
+</advancedsettings>

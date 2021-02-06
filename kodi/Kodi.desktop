@@ -1,0 +1,18 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.9.4
+Type=Application
+Name=Kodi
+Comment=Kodi Entertainment
+#Exec=/usr/bin/kodi
+#Exec=KODI_AE_SINK=ALSA /usr/bin/kodi
+Exec=/home/muse/bin/kodi-launch.sh
+#Exec=pasuspender -- env KODI_AE_SINK=ALSA /usr/bin/kodi
+#Exec=pasuspender -- /usr/bin/kodi
+OnlyShowIn=XFCE;
+StartupNotify=false
+Icon=kodi
+#Path=/usr/bin
+Terminal=false
+Hidden=false
+
