@@ -1,17 +1,17 @@
-2021-02-06 10:58:05.652119212
+2021-02-14 13:26:21.981499180
 
-KODI_JSON_CMD: audiooutput.audiodevice ALSA:hdmi:CARD=NVidia,DEV=1
+KODI_JSON_CMD: audiooutput.audiodevice ALSA:hdmi:CARD=NVidia,DEV=0
 
 Note: Unnecessary use of -X or --request, POST is already inferred.
-* Expire in 0 ms for 6 (transfer 0x564c5c0d9f90)
-* Expire in 1 ms for 1 (transfer 0x564c5c0d9f90)
+* Expire in 0 ms for 6 (transfer 0x55681bca6f90)
+* Expire in 1 ms for 1 (transfer 0x55681bca6f90)
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Expire in 0 ms for 1 (transfer 0x564c5c0d9f90)
-* Expire in 0 ms for 1 (transfer 0x564c5c0d9f90)
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Expire in 0 ms for 1 (transfer 0x55681bca6f90)
+* Expire in 0 ms for 1 (transfer 0x55681bca6f90)
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
-* Expire in 200 ms for 4 (transfer 0x564c5c0d9f90)
+* Expire in 200 ms for 4 (transfer 0x55681bca6f90)
 * Connected to localhost (127.0.0.1) port 8180 (#0)
 > POST /jsonrpc HTTP/1.1
 > Host: localhost:8180
@@ -28,24 +28,24 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 < Content-Type: application/json
 < Cache-Control: private, max-age=0, no-cache
 < Accept-Ranges: none
-< Date: Sat, 06 Feb 2021 17:58:05 GMT
+< Date: Sun, 14 Feb 2021 20:26:21 GMT
 < 
 { [38 bytes data]
 100   184  100    38  100   146  38000   142k --:--:-- --:--:-- --:--:--  179k
 * Connection #0 to host localhost left intact
 {"id":1,"jsonrpc":"2.0","result":true}
-KODI_JSON_CMD: audiooutput.passthroughdevice ALSA:hdmi:CARD=NVidia,DEV=1
+KODI_JSON_CMD: audiooutput.passthroughdevice ALSA:hdmi:CARD=NVidia,DEV=0
 
 Note: Unnecessary use of -X or --request, POST is already inferred.
-* Expire in 0 ms for 6 (transfer 0x559121fd9f90)
-* Expire in 1 ms for 1 (transfer 0x559121fd9f90)
+* Expire in 0 ms for 6 (transfer 0x557adb292f90)
+* Expire in 1 ms for 1 (transfer 0x557adb292f90)
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Expire in 0 ms for 1 (transfer 0x559121fd9f90)
-* Expire in 0 ms for 1 (transfer 0x559121fd9f90)
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* Expire in 0 ms for 1 (transfer 0x557adb292f90)
+* Expire in 0 ms for 1 (transfer 0x557adb292f90)
 *   Trying 127.0.0.1...
 * TCP_NODELAY set
-* Expire in 200 ms for 4 (transfer 0x559121fd9f90)
+* Expire in 200 ms for 4 (transfer 0x557adb292f90)
 * Connected to localhost (127.0.0.1) port 8180 (#0)
 > POST /jsonrpc HTTP/1.1
 > Host: localhost:8180
@@ -62,7 +62,7 @@ Note: Unnecessary use of -X or --request, POST is already inferred.
 < Content-Type: application/json
 < Cache-Control: private, max-age=0, no-cache
 < Accept-Ranges: none
-< Date: Sat, 06 Feb 2021 17:58:05 GMT
+< Date: Sun, 14 Feb 2021 20:26:21 GMT
 < 
 { [38 bytes data]
 100   190  100    38  100   152  38000   148k --:--:-- --:--:-- --:--:--  185k

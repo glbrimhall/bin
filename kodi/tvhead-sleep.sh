@@ -5,9 +5,9 @@
 
 set -v
 
-LOG=/home/muse/bin/tvhead-sleep.log
+LOG=/home/muse/bin/tvhead-sleep-$1-$2.log
 
-date +"%Y-%m-%d %H:%M:%S.%N" >> $LOG
+date +"%Y-%m-%d %H:%M:%S.%N" > $LOG
 
 
 case $1/$2 in
