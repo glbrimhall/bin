@@ -70,6 +70,26 @@ set whichwrap+=<,>,h,l,[,]
 set backspace=indent,eol,start
 syntax on
 
+"From https://www.reddit.com/r/vim/comments/bzbv98/detect_whether_caps_locks_is_on/
+function! Cap_Status()
+    let St = systemlist('xset -q | grep "Caps Lock" | awk ''{print $4}''')[0]
+    redraw
+    if St == "on"
+	highlight Cursor guifg=white guibg=green
+	let St = "CAPS"
+    else
+	highlight Cursor guifg=white guibg=black
+	let St = ""
+    endif
+    
+    return St
+endfunction
+
+set laststatus=2
+set statusline=
+set statusline+=\ %f
+set statusline+=%=%{Cap_Status()}
+
 set foldmethod=indent
 " set foldnestmax=10
 " set nofoldenable
@@ -149,38 +169,20 @@ map b %
 nnoremap z  za<Esc>
 
 "file open
-noremap F :e .<cr>
-
-"search word
-nnoremap t *
-
-"search clear 
-nnoremap T :noh<Cr>
+noremap F :tab split<cr>:e .<cr>
 
 "delete line
 "nnoremap D d<Esc>
 
 "delete char right
-"From https://vim.fandom.com/wiki/Backspace_and_delete_problems
-func Backspace()
-if col('.') == 1
-if line('.')  != 1
-return  "\<ESC><Up>$<Del>"
-else
-return ""
-endif
-else
-return "\<Left>\<Del>"
-endif
-endfunc
-
 inoremap <C-x> <Esc>lxi
-"nnoremap <BS>  i<BS><Esc> 
-"nnoremap <BS>   call Backspace(
 
 "delete char left 
 inoremap <C-d> <Esc>lXi
 nnoremap <BS>  X
+
+"<space> insert
+nnoremap <space> i<space><Right><Esc>
 
 "redo
 noremap <C-u> <C-r>
@@ -194,14 +196,22 @@ nnoremap v V
 "select region
 nnoremap V <C-v>
 
-"split screen
+"split window
 nnoremap 2 :sp<cr>
 
-"unsplit screen
+"unsplit window 
 nnoremap 1 :on<cr>
 
 "new window
 nnoremap 3 :tab split<cr>
+
+"Window switch
+noremap t gt 
+inoremap <C-t> gt 
+
+"Split Window switch
+noremap o <C-w>w 
+inoremap <C-o> <C-w>w 
 
 "line begin
 noremap a 0
@@ -236,6 +246,9 @@ nnoremap f /<Cr>
 
 "prev search
 nnoremap r ?<Cr>
+
+"search clear 
+nnoremap T :noh<Cr>
 
 "next page
 noremap N <C-f>  
@@ -291,14 +304,6 @@ nnoremap <CR> i<CR><Esc>
 "vnoremap <C-Space> I<Space><Esc>gv
 "vnoremap <C-S-Space> A<Space><Esc>gv
 set virtualedit=block
-
-"Window switch
-noremap b gt 
-inoremap <C-b> gt 
-
-"Split Window switch
-noremap o <C-w>w 
-inoremap <C-o> <C-w>w 
 
 "compile
 "autocmd Filetype cpp source ~/.vim/cpp.vim
