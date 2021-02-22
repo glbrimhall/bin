@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
-LOG=/home/geoff/bin/start-macvlan.log
+LOG=/home/geoff/bin/start-macvlan0.log
 
-date >> $LOG
+date > $LOG
 echo $1 $2 >> $LOG
 
 sudo /home/geoff/bin/start-macvtap.sh
