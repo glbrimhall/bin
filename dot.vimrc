@@ -250,6 +250,9 @@ nnoremap r ?<Cr>
 "search clear 
 nnoremap T :noh<Cr>
 
+" search & replace
+nnoremap s *:%s//
+
 "next page
 noremap N <C-f>  
 
