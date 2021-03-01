@@ -74,6 +74,7 @@ syntax on
 noremap <C-z> <Esc>
 inoremap <C-z> <Esc>
 
+"From https://stackoverflow.com/questions/2355834/how-can-i-autoformat-indent-c-code-in-vim
 "cleanup tab spacing
 nnoremap C gg=G
 
