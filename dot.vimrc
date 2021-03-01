@@ -70,94 +70,6 @@ set whichwrap+=<,>,h,l,[,]
 set backspace=indent,eol,start
 syntax on
 
-"From https://www.reddit.com/r/vim/comments/bzbv98/detect_whether_caps_locks_is_on/
-function! Cap_Status()
-    let St = systemlist('xset -q | grep "Caps Lock" | awk ''{print $4}''')[0]
-    redraw
-    if St == "on"
-	highlight Cursor guifg=white guibg=green
-	let St = "CAPS"
-    else
-	highlight Cursor guifg=white guibg=black
-	let St = ""
-    endif
-    
-    return St
-endfunction
-
-set laststatus=2
-set statusline=
-set statusline+=\ %f
-set statusline+=%=%{Cap_Status()}
-
-set foldmethod=indent
-" set foldnestmax=10
-" set nofoldenable
-set foldlevel=99
-
-set wrap linebreak nolist
-set formatoptions=1
-
-" block edit shortcuts:
-" https://stackoverflow.com/questions/9549729/vim-insert-the-same-characters-across-multiple-lines
-
-" make backspaces more powerfull
-set backspace=indent,eol,start
-
-" show (partial) command in status line
-set showcmd
-
-" auto change to dir of current file
-set autochdir
-
-" make extra whitespace
-" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
-" default utf-8
-set encoding=utf-8
-
-" show ruler
-set ruler
-
-"{{{ no_spacevim
-if !exists("g:spacevim_windows_leader")
-
-augroup XML
-autocmd!
-autocmd FileType xml,ui,xhtml,html,xsd let g:xml_syntax_folding=1
-"autocmd FileType xml,ui,xhtml,html,xsd setlocal foldmethod=indent foldlevelstart=999 foldminlines=0
-autocmd FileType xml,ui,xhtml,html,xsd setlocal foldmethod=syntax
-autocmd FileType xml,ui,xhtml,html,xsd :syntax on
-"autocmd FileType xml,ui,xhtml,html,xsd normal zR 
-"autocmd FileType xml,ui,xhtml,html,xsd :%foldopen!
-augroup END
-
-"matchit
-"source ~/.SpaceVim.d/plugin/matchit.vim
-":helptags ~/.SpaceVim.d/doc
-
-"rebuild help:
-":help add-local-help
-
-:filetype plugin on
-
-" Color for dark
-":color slate
-":color desert
-
-" Color for light 
-:color peachpuff 
-
-" Hilighting
-let python_highlight_all=1
-syntax on
-
-" line numbering
-set nu
-
-endif
-"}}} no_spacevim
-
 "Escape 
 noremap <C-z> <Esc>
 inoremap <C-z> <Esc>
@@ -326,25 +238,114 @@ nnoremap <C-a> :tabnew<Cr>:ex .<Cr>
 
 " filetype settings:
 
-" python indentation
-au BufNewFile,BufRead *.py set 
-    \ tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ textwidth=79
-    \ autoindent
-    \ smartindent
-    \ smarttab
-    \ expandtab
-    \ fileformat=unix
-    \ number
+" python, vimrc 
+function! LangIndentSettings(indent=4,cols=79)
+    "let l:tablen=str2nr(a:indent, 10) 
+    "let l:tablen=0+a:indent 
+    let tabstop=a:indent
+    let &softtabstop=a:indent     
+    let &shiftwidth=a:indent     
+    let &textwidth=a:cols
+    set autoindent
+    set smartindent
+    set smarttab
+    set expandtab
+    set fileformat=unix
+    set foldmethod=syntax
+    "set foldmethod=indent
+    "set foldnestmax=10
+    "set nofoldenable
+    set foldlevel=99
+endfunction
 
-" other code indentation
-au BufNewFile,BufRead *.js, *.html, *.css set 
-    \ tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
-    \ autoindent
+augroup LangIndentGroup 
+    autocmd!
+"    BufNewFile,BufRead *.py call LangIndentSettings() 
+    au FileType python call LangIndentSettings(4)
+    au FileType vimrc call LangIndentSettings(4)
+    au FileType cpp call LangIndentSettings(3)
+    au BufNewFile,BufRead *.html,*.css call LangIndentSettings(2) 
+    au BufNewFile,BufRead *.js,*.xml,*.jsr call LangIndentSettings(3) 
+augroup END
 
+"From https://www.reddit.com/r/vim/comments/bzbv98/detect_whether_caps_locks_is_on/
+function! Cap_Status()
+    let St = systemlist('xset -q | grep "Caps Lock" | awk ''{print $4}''')[0]
+    redraw
+    if St == "on"
+	highlight Cursor guifg=white guibg=green
+	let St = "CAPS"
+    else
+	highlight Cursor guifg=white guibg=black
+	let St = ""
+    endif
+    
+    return St
+endfunction
+
+set laststatus=2
+set statusline=
+set statusline+=\ %f
+set statusline+=%=%{Cap_Status()}
+
+set foldmethod=indent
+" set foldnestmax=10
+" set nofoldenable
+set foldlevel=99
+
+set wrap linebreak nolist
+set formatoptions=1
+
+" block edit shortcuts:
+" https://stackoverflow.com/questions/9549729/vim-insert-the-same-characters-across-multiple-lines
+
+" show (partial) command in status line
+set showcmd
+
+" auto change to dir of current file
+set autochdir
+
+" make extra whitespace
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+" default utf-8
+set encoding=utf-8
+
+" show ruler
+set ruler
+
+"{{{ no_spacevim
+if !exists("g:spacevim_windows_leader")
+
+" Hilighting
+let python_highlight_all=1
+syntax on
+
+" line numbering
+set number
+
+augroup XML
+autocmd!
+autocmd FileType xml,ui,xhtml,html,xsd let g:xml_syntax_folding=1
+augroup END
+
+"matchit
+"source ~/.SpaceVim.d/plugin/matchit.vim
+":helptags ~/.SpaceVim.d/doc
+
+"rebuild help:
+":help add-local-help
+
+:filetype plugin on
+
+" Color for dark
+":color slate
+":color desert
+
+" Color for light 
+:color peachpuff 
+
+endif
+"}}} no_spacevim
 
 
