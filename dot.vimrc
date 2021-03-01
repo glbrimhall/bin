@@ -74,6 +74,9 @@ syntax on
 noremap <C-z> <Esc>
 inoremap <C-z> <Esc>
 
+"cleanup tab spacing
+nnoremap C gg=G
+
 "match boundaries
 map b %
 
@@ -239,7 +242,7 @@ nnoremap <C-a> :tabnew<Cr>:ex .<Cr>
 " filetype settings:
 
 " python, vimrc 
-function! LangIndentSettings(indent=4,cols=79)
+function! LangIndentSettings(indent=4,cols=79,fold="syntax")
     "let l:tablen=str2nr(a:indent, 10) 
     "let l:tablen=0+a:indent 
     let tabstop=a:indent
@@ -251,7 +254,7 @@ function! LangIndentSettings(indent=4,cols=79)
     set smarttab
     set expandtab
     set fileformat=unix
-    set foldmethod=syntax
+    let &foldmethod=a:fold
     "set foldmethod=indent
     "set foldnestmax=10
     "set nofoldenable
@@ -261,7 +264,7 @@ endfunction
 augroup LangIndentGroup 
     autocmd!
 "    BufNewFile,BufRead *.py call LangIndentSettings() 
-    au FileType python call LangIndentSettings(4)
+    au FileType python call LangIndentSettings(4,79,"indent")
     au FileType vimrc call LangIndentSettings(4)
     au FileType cpp call LangIndentSettings(3)
     au BufNewFile,BufRead *.html,*.css call LangIndentSettings(2) 
