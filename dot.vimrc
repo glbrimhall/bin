@@ -30,7 +30,7 @@ Plugin 'nvie/vim-flake8'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " Vundle required 
+filetype plugin indent on    " Vundle required
 
 " Autocomplete
 "let g:ycm_autoclose_preview_window_after_completion=1
@@ -61,7 +61,7 @@ let g:syntastic_check_on_wq = 0
 
 else
 
-filetype plugin indent on    " Vundle required 
+filetype plugin indent on    " Vundle required
 
 endif
 
@@ -70,13 +70,9 @@ set whichwrap+=<,>,h,l,[,]
 set backspace=indent,eol,start
 syntax on
 
-"Escape 
-noremap <C-z> <Esc>
-inoremap <C-z> <Esc>
-
 "From https://stackoverflow.com/questions/2355834/how-can-i-autoformat-indent-c-code-in-vim
 "cleanup tab spacing
-nnoremap C gg=G
+nnoremap Z gg=G
 
 "match boundaries
 map b %
@@ -87,15 +83,26 @@ nnoremap z  za<Esc>
 "file open
 noremap F :tab split<cr>:e .<cr>
 
-"delete line
+"delete line  well,
 "nnoremap D d<Esc>
 
 "delete char right
-inoremap <C-x> <Esc>lxi
+nnoremap x  "_x
+inoremap <C-x> <Esc>l"_xi
 
-"delete char left 
-inoremap <C-d> <Esc>lXi
-nnoremap <BS>  X
+"delete char left
+inoremap <C-d> <Esc>l"_Xi
+nnoremap <BS>  "_X
+
+"paste
+nnoremap w P<Esc>
+inoremap <C-w> <Esc>lPi
+
+"set clipboard=unnamedplus
+"set clipboard=unnamed
+
+"del line above
+nnoremap D :-1d<Cr>
 
 "<space> insert
 nnoremap <space> i<space><Right><Esc>
@@ -137,15 +144,8 @@ inoremap <C-a> <Esc>0i
 noremap e $
 inoremap <C-e> <Esc>$i
 
-"paste
-nnoremap w P<Esc>
-inoremap <C-w> <Esc>lPi
-
-"del line above
-nnoremap D :-1d<Cr>
-
-"insert endline 
-"nnoremap I $a
+"insert endline
+nnoremap E $i<Right>
 
 "next word
 noremap L w<Esc>
@@ -163,14 +163,14 @@ nnoremap f /<Cr>
 "prev search
 nnoremap r ?<Cr>
 
-"search clear 
+"search clear
 nnoremap T :noh<Cr>
 
 " search & replace
 nnoremap s *:%s//
 
 "next page
-noremap N <C-f>  
+noremap N <C-f>
 
 "prev line
 noremap p <Up>
@@ -178,9 +178,9 @@ noremap j <Up>
 inoremap <C-p> <Up>
 
 "prev page
-noremap P <C-b>  
+nnoremap P <C-b>
 
-"next char 
+"next char
 "          l
 inoremap <C-l> <Right>
 
@@ -219,6 +219,10 @@ nnoremap <C-L> <C-W><C-H>
 "i mode newline:
 nnoremap <CR> i<CR><Esc>
 
+"escape 
+noremap A <Esc>
+inoremap <C-A> <Esc>
+
 " From https://stackoverflow.com/questions/13701506/vim-quick-column-insert
 "vnoremap <C-Space> I<Space><Esc>gv
 "vnoremap <C-S-Space> A<Space><Esc>gv
@@ -242,7 +246,6 @@ nnoremap <C-a> :tabnew<Cr>:ex .<Cr>
 
 " filetype settings:
 
-" python, vimrc 
 function! LangIndentSettings(indent=4,cols=79,fold="syntax")
     "let l:tablen=str2nr(a:indent, 10) 
     "let l:tablen=0+a:indent 
@@ -262,12 +265,17 @@ function! LangIndentSettings(indent=4,cols=79,fold="syntax")
     set foldlevel=99
 endfunction
 
+function! CLangIndentSettings()
+    call LangIndentSettings(3)
+    set cino={1s}s 
+endfunction
+
 augroup LangIndentGroup 
     autocmd!
 "    BufNewFile,BufRead *.py call LangIndentSettings() 
     au FileType python call LangIndentSettings(4,79,"indent")
     au FileType vimrc call LangIndentSettings(4)
-    au FileType cpp call LangIndentSettings(3)
+    au FileType cpp call CLangIndentSettings()
     au BufNewFile,BufRead *.html,*.css call LangIndentSettings(2) 
     au BufNewFile,BufRead *.js,*.xml,*.jsr call LangIndentSettings(3) 
 augroup END
@@ -290,8 +298,7 @@ endfunction
 set laststatus=2
 set statusline=
 set statusline+=\ %f
-set statusline+=%=%{Cap_Status()}
-
+set statusline+=%=%{Cap_Status()}\ C%c
 set foldmethod=indent
 " set foldnestmax=10
 " set nofoldenable
@@ -318,9 +325,6 @@ set encoding=utf-8
 " show ruler
 set ruler
 
-"{{{ no_spacevim
-if !exists("g:spacevim_windows_leader")
-
 " Hilighting
 let python_highlight_all=1
 syntax on
@@ -333,23 +337,23 @@ autocmd!
 autocmd FileType xml,ui,xhtml,html,xsd let g:xml_syntax_folding=1
 augroup END
 
-"matchit
-"source ~/.SpaceVim.d/plugin/matchit.vim
-":helptags ~/.SpaceVim.d/doc
-
 "rebuild help:
 ":help add-local-help
 
 :filetype plugin on
 
+"From https://vim.fandom.com/wiki/Highlight_unwanted_spaces
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd Syntax * syn match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+
 " Color for dark
 ":color slate
 ":color desert
 
-" Color for light 
-:color peachpuff 
-
-endif
-"}}} no_spacevim
-
+" Color for light
+:color peachpuff
 
