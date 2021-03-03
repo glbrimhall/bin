@@ -267,7 +267,9 @@ endfunction
 
 function! CLangIndentSettings()
     call LangIndentSettings(3)
-    set cino={1s}s 
+
+    " From http://vimdoc.sourceforge.net/htmldoc/indent.html
+    set cino=g0{1s
 endfunction
 
 augroup LangIndentGroup 
@@ -298,7 +300,8 @@ endfunction
 set laststatus=2
 set statusline=
 set statusline+=\ %f
-set statusline+=%=%{Cap_Status()}\ C%c
+set statusline+=%=C%c
+"set statusline+=%=%{Cap_Status()}\ C%c
 set foldmethod=indent
 " set foldnestmax=10
 " set nofoldenable
