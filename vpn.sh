@@ -2,4 +2,5 @@
 # nordvpn set technology NordLynx
 # nordvpn set technology OpenVPN 
 
-sudo nordvpn connect United_States Phoenix
+#sudo nordvpn connect United_States Phoenix
+nordvpn connect United_States Phoenix
