@@ -1,0 +1,14 @@
+[Unit]
+Description=Sets rtc timer to wake system up tomorrow morning
+Requires=home.mount
+After=home.mount
+
+[Service]
+Type=simple
+RemainAfterExit=no
+ExecStart=/home/geoff/bin/wakeup-tomorrow.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
+
