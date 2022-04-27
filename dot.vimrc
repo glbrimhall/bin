@@ -324,7 +324,7 @@ autocmd BufWinLeave * call clearmatches()
 " Color for light
 :color peachpuff
 
-function! LangIndentSettings(indent=4,cols=79,fold="syntax")
+function! LangIndentSettings(indent=3,cols=79,fold="syntax")
     "let l:tablen=str2nr(a:indent, 10) 
     "let l:tablen=0+a:indent 
     let tabstop=a:indent
@@ -353,8 +353,8 @@ endfunction
 augroup LangIndentGroup 
     autocmd!
 "    BufNewFile,BufRead *.py call LangIndentSettings() 
-    au FileType python call LangIndentSettings(4,79,"indent")
-    au FileType vimrc call LangIndentSettings(4)
+    au FileType python call LangIndentSettings(3,79,"indent")
+    au FileType vimrc call LangIndentSettings(3)
     au FileType cpp call CLangIndentSettings()
     au BufNewFile,BufRead *.html,*.css call LangIndentSettings(2) 
     au BufNewFile,BufRead *.js,*.xml,*.jsr call LangIndentSettings(3) 
