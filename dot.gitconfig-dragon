@@ -11,3 +11,5 @@
 	pager = less -r
 [pull]
 	rebase = false
+[gcrypt]
+	participants = 3ABE4BB6986E2847
