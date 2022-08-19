@@ -7,7 +7,7 @@
 # and a static (manual) ip config
 # Evert Mouw, 2013
 
-#exit 0
+exit 0
 
 MACVLN=macvlan0
 TESTHOST=www.google.com

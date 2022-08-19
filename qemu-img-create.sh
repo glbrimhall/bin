@@ -1,3 +1,3 @@
 DISK=$1
 SIZE=$2
-qemu-img create  -opreallocation=metadata -ocluster_size=2M -f qcow2 $DISK $SIZE
+qemu-img create  -opreallocation=metadata -o cluster_size=2M,size=$SIZE -f qcow2 $DISK 
