@@ -40,7 +40,10 @@ echo "HWLINK=$HWLINK"
 echo "IP=$IP"
 echo "NETWORK=$NETWORK"
 echo "GATEWAY=$GATEWAY"
-#exit
+
+if [ "$1" == "test" ]; then
+exit 0
+fi
 
 # ------------
 # setting up $MACVLN interface
