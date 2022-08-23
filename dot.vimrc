@@ -247,19 +247,19 @@ nnoremap <C-a> :tabnew<Cr>:ex .<Cr>
 " filetype settings:
 
 function! LangIndentSettings(indent,cols,fold)
-    "let l:tablen=str2nr(indent, 10) 
-    "let l:tablen=0+indent 
-    let tabstop=indent
-    let &softtabstop=indent     
-    let &shiftwidth=indent     
-    let &textwidth=cols
+    "let l:tablen=str2nr(a:indent, 10)
+    "let l:tablen=0+a:indent
+    let tabstop=a:indent
+    let &softtabstop=a:indent
+    let &shiftwidth=a:indent
+    let &textwidth=a:cols
     set autoindent
     set smartindent
     set smarttab
     set expandtab
     set fileformat=unix
-    let &foldmethod=fold
-    "set foldmethod=indent
+    let &foldmethod=a:fold
+    "set foldmethod=a:indent
     "set foldnestmax=10
     "set nofoldenable
     set foldlevel=99
@@ -272,14 +272,14 @@ function! CLangIndentSettings()
     set cino=g0{1s
 endfunction
 
-augroup LangIndentGroup 
+augroup LangIndentGroup
     autocmd!
-"    BufNewFile,BufRead *.py call LangIndentSettings() 
+"    BufNewFile,BufRead *.py call LangIndentSettings(3,79,"syntax")
     au FileType python call LangIndentSettings(3,79,"indent")
     au FileType vimrc call LangIndentSettings(3,79,"syntax")
     au FileType cpp call CLangIndentSettings(3,79,"syntax")
-    au BufNewFile,BufRead *.html,*.css call LangIndentSettings(2,79,"syntax") 
-    au BufNewFile,BufRead *.js,*.xml,*.jsr call LangIndentSettings(3,79,"syntax") 
+    au BufNewFile,BufRead *.html,*.css call LangIndentSettings(2,79,"syntax")
+    au BufNewFile,BufRead *.js,*.xml,*.jsr call LangIndentSettings(3,79,"syntax")
 augroup END
 
 "From https://www.reddit.com/r/vim/comments/bzbv98/detect_whether_caps_locks_is_on/
