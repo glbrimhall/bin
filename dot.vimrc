@@ -354,9 +354,9 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 
 " Color for dark
-":color slate
+:color slate
 ":color desert
 
 " Color for light
-:color peachpuff
+":color peachpuff
 
