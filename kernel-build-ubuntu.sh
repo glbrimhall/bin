@@ -9,9 +9,10 @@
 # Works ! From https://www.maketecheasier.com/build-custom-kernel-ubuntu/
 FLAVOR=${1:-k8}
 
-echo "RUN inside exploded linux src tarball !"
+echo "RUN inside a clean, just exploded linux src tarball !"
 make clean
-make -j `getconf _NPROCESSORS_ONLN`
-rm -vf ./vmlinux-gdb.py
-make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-$FLAVOR
+fakeroot make -j `getconf _NPROCESSORS_ONLN`
+rm -vf vmlinux-gdb.py
+mv -v scripts/gdb/vmlinux-gdb.py scripts/gdb/vmlinux-gdb.py-disable
+fakeroot make -j `getconf _NPROCESSORS_ONLN` deb-pkg LOCALVERSION=-$FLAVOR
 
