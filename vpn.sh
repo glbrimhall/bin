@@ -3,4 +3,5 @@
 # nordvpn set technology OpenVPN 
 
 #sudo nordvpn connect United_States Phoenix
-nordvpn connect United_States Phoenix
+#nordvpn connect United_States Phoenix
+nordvpn connect

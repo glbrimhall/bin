@@ -277,7 +277,7 @@ augroup LangIndentGroup
 "    BufNewFile,BufRead *.py call LangIndentSettings(3,79,"syntax")
     au FileType python call LangIndentSettings(3,79,"indent")
     au FileType vimrc call LangIndentSettings(3,79,"syntax")
-    au FileType cpp call CLangIndentSettings(3,79,"syntax")
+    au FileType cpp call CLangIndentSettings()
     au BufNewFile,BufRead *.html,*.css call LangIndentSettings(2,79,"syntax")
     au BufNewFile,BufRead *.js,*.xml,*.jsr call LangIndentSettings(3,79,"syntax")
 augroup END

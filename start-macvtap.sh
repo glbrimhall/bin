@@ -7,8 +7,6 @@
 # and a static (manual) ip config
 # Evert Mouw, 2013
 
-exit 0
-
 MACVLN=macvlan0
 TESTHOST=www.google.com
 HWADDR="address 26:b7:fc:b3:8c:ae"
