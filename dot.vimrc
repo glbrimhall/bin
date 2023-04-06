@@ -68,7 +68,9 @@ endif
 "From https://vim.fandom.com/wiki/Automatically_wrap_left_and_right
 set whichwrap+=<,>,h,l,[,]
 set backspace=indent,eol,start
+"syntax on
 syntax on
+set syntax=json
 
 "From https://stackoverflow.com/questions/2355834/how-can-i-autoformat-indent-c-code-in-vim
 "cleanup tab spacing
@@ -266,9 +268,10 @@ function! LangIndentSettings(indent,cols,fold)
 endfunction
 
 function! CLangIndentSettings()
-    call LangIndentSettings(3,79,"syntax")
+    call LangIndentSettings(4,79,"syntax")
 
     " From http://vimdoc.sourceforge.net/htmldoc/indent.html
+    "set cino=g0
     set cino=g0{1s
 endfunction
 
@@ -280,6 +283,7 @@ augroup LangIndentGroup
     au FileType cpp call CLangIndentSettings()
     au BufNewFile,BufRead *.html,*.css call LangIndentSettings(2,79,"syntax")
     au BufNewFile,BufRead *.js,*.xml,*.jsr call LangIndentSettings(3,79,"syntax")
+    au BufRead *.log,*.txt AnsiEsc
 augroup END
 
 "From https://www.reddit.com/r/vim/comments/bzbv98/detect_whether_caps_locks_is_on/
@@ -346,12 +350,17 @@ augroup END
 :filetype plugin on
 
 "From https://vim.fandom.com/wiki/Highlight_unwanted_spaces
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd Syntax * syn match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=lightgreen
+autocmd Syntax * syn match ExtraWhitespace /\t\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\t\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\t\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\t\s\+$/
 autocmd BufWinLeave * call clearmatches()
+
+"autocmd Syntax * syn match ExtraWhitespace / \+\ze\t\s\+$/
+"autocmd BufWinEnter * match ExtraWhitespace / \+\ze\t\s\+$/
+"autocmd InsertEnter * match ExtraWhitespace / \+\ze\t\s\+\%#\@<!$/
+"autocmd InsertLeave * match ExtraWhitespace / \+\ze\t\s\+$/
 
 " Color for dark
 :color slate
