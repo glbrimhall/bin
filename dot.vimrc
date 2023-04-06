@@ -65,6 +65,10 @@ filetype plugin indent on    " Vundle required
 
 endif
 
+" Disable bell
+set visualbell
+set t_vb=
+
 "From https://vim.fandom.com/wiki/Automatically_wrap_left_and_right
 set whichwrap+=<,>,h,l,[,]
 set backspace=indent,eol,start
