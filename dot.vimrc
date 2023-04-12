@@ -196,6 +196,9 @@ inoremap <C-k> <Left>
 
 " Getting navigation keys to work in file explorer
 " From https://vi.stackexchange.com/questions/5531/how-to-remap-i-in-netrw
+let g:netrw_sort_options = 'i'
+let g:netrw_sort_sequence = '[\/]$,*'
+
 augroup netrw_mapping
     autocmd!
     autocmd filetype netrw call NetrwMapping()
