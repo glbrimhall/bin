@@ -101,8 +101,8 @@ inoremap <C-d> <Esc>l"_Xi
 nnoremap <BS>  "_X
 
 "paste
-nnoremap w p<Esc>
-inoremap <C-w> <Esc>lpi
+nnoremap w P<Esc>
+inoremap <C-w> <Esc>lPi
 
 "set clipboard=unnamedplus
 "set clipboard=unnamed
