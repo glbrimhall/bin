@@ -294,25 +294,10 @@ augroup LangIndentGroup
 augroup END
 
 "From https://www.reddit.com/r/vim/comments/bzbv98/detect_whether_caps_locks_is_on/
-function! Cap_Status()
-    let St = systemlist('xset -q | grep "Caps Lock" | awk ''{print $4}''')[0]
-    redraw
-    if St == "on"
-	highlight Cursor guifg=white guibg=green
-	let St = "CAPS"
-    else
-	highlight Cursor guifg=white guibg=black
-	let St = ""
-    endif
-    
-    return St
-endfunction
-
 set laststatus=2
 set statusline=
 set statusline+=\ %f
 set statusline+=%=C%c
-"set statusline+=%=%{Cap_Status()}\ C%c
 set foldmethod=indent
 " set foldnestmax=10
 " set nofoldenable
