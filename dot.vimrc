@@ -274,8 +274,8 @@ function! LangIndentSettings(indent,cols,fold)
     set foldlevel=99
 endfunction
 
-function! CLangIndentSettings()
-    call LangIndentSettings(4,79,"syntax")
+function! CLangIndentSettings(indent)
+    call LangIndentSettings(a:indent,79,"syntax")
 
     " From http://vimdoc.sourceforge.net/htmldoc/indent.html
     "set cino=g0
@@ -287,7 +287,8 @@ augroup LangIndentGroup
 "    BufNewFile,BufRead *.py call LangIndentSettings(3,79,"syntax")
     au FileType python call LangIndentSettings(3,79,"indent")
     au FileType vimrc call LangIndentSettings(3,79,"syntax")
-    au FileType cpp call CLangIndentSettings()
+    au FileType cpp call CLangIndentSettings(3)
+    au FileType php call CLangIndentSettings(3)
     au BufNewFile,BufRead *.html,*.css call LangIndentSettings(2,79,"syntax")
     au BufNewFile,BufRead *.js,*.xml,*.jsr call LangIndentSettings(3,79,"syntax")
     au BufRead *.log,*.txt AnsiEsc
