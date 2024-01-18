@@ -2,7 +2,7 @@
 
 IMAGE=$1
 TAG=$2
-REGISTRY=${3:-https://dockerepo.library.arizona.edu:5000}
+REGISTRY=${3:-http://dock:5000}
 
 if [ "$IMAGE" == "" ]; then
     curl -X GET $REGISTRY/v2/_catalog
