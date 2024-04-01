@@ -21,4 +21,10 @@ gpg --show-keys < <email_addr>.master-public.gpg-key
 gpg --edit-key <email_addr> # in prompt delkey 
 gpg --export-secret-subkeys --armor <email_addr>.master-private.gpg-key
 
+# gpg delete subkeys
+gpg --edit-key <email_addr> # the key N, delkey for unwanted
+gpg --list-keys --with-keygrip <email_addr> # private key identity
+gpg --list-keys --with-subkey-fingerprints <email_addr>
+gpg --list-secret-keys --with-subkey-fingerprints <email_addr>
+#bad gpg --delete-secret-and-public-keys <fingerprint>! #note end !
 
