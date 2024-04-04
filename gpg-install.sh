@@ -27,4 +27,5 @@ gpg --list-keys --with-keygrip <email_addr> # private key identity
 gpg --list-keys --with-subkey-fingerprints <email_addr>
 gpg --list-secret-keys --with-subkey-fingerprints <email_addr>
 #bad gpg --delete-secret-and-public-keys <fingerprint>! #note end !
+gpgconf --kill gpg-agent # reset
 
