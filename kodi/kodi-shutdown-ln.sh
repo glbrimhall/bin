@@ -1,1 +1,0 @@
-/home/muse/.kodi/addons/service.pvr.manager/resources/lib

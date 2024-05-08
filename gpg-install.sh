@@ -1,4 +1,4 @@
-sudo apt install git git-remote-gcrypt gnupg rclone
+sudo apt install git git-remote-gcrypt gnupg rclone scdaemon
 
 exit
 
@@ -27,4 +27,5 @@ gpg --list-keys --with-keygrip <email_addr> # private key identity
 gpg --list-keys --with-subkey-fingerprints <email_addr>
 gpg --list-secret-keys --with-subkey-fingerprints <email_addr>
 #bad gpg --delete-secret-and-public-keys <fingerprint>! #note end !
+echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
 
