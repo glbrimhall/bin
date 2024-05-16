@@ -342,6 +342,9 @@ augroup END
 
 :filetype plugin on
 
+" Don't auto-jump to matching paren
+:NoMatchParen
+
 "From https://vim.fandom.com/wiki/Highlight_unwanted_spaces
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=lightgreen
 autocmd Syntax * syn match ExtraWhitespace /\t\s\+$/
