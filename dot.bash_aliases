@@ -15,6 +15,7 @@ alias lr='ls -R'
 alias df='df -h'
 alias cdd='cd $HOME/github/scrapetrade/src/control'
 alias cdb='cd $HOME/github/scrapetrade/bin/control'
+alias cds='cd $HOME/github/ibkr/client/IBJts/source/pythonclient'
 alias 7za='7az -mm=BZip2'
 alias sd='systemctl daemon-reload'
 

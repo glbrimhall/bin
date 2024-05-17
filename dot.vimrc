@@ -342,6 +342,9 @@ augroup END
 
 :filetype plugin on
 
+" Don't auto-jump to matching paren
+:NoMatchParen
+
 "From https://vim.fandom.com/wiki/Highlight_unwanted_spaces
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=lightgreen
 autocmd Syntax * syn match ExtraWhitespace /\t\s\+$/
@@ -356,12 +359,13 @@ autocmd BufWinLeave * call clearmatches()
 "autocmd InsertLeave * match ExtraWhitespace / \+\ze\t\s\+$/
 
 " Color for dark
-:color ron
+":color ron
 ":color darkblue
 ":color pablo
 ":color slate
 ":color desert
 
 " Color for light
-":color peachpuff
+:color zellner
+":color delek
 

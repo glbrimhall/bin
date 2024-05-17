@@ -29,3 +29,6 @@ gpg --list-secret-keys --with-subkey-fingerprints <email_addr>
 #bad gpg --delete-secret-and-public-keys <fingerprint>! #note end !
 echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
 
+echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
+gpgconf --kill gpg-agent # reset
+
