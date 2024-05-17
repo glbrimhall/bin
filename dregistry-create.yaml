@@ -26,11 +26,6 @@ services:
     ports:
       - 5000:5000 
     environment:
-      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Origin: '[http://spire:5000]'
-      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Methods: '[HEAD,GET,OPTIONS,DELETE]'
-      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Credentials: '[true]'
-      REGISTRY_HTTP_HEADERS_Access-Control-Allow-Headers: '[Authorization,Accept,Cache-Control]'
-      REGISTRY_HTTP_HEADERS_Access-Control-Expose-Headers: '[Docker-Content-Digest]'
       REGISTRY_STORAGE_DELETE_ENABLED: 'true'
     container_name: repo-img
 
