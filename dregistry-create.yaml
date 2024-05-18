@@ -21,7 +21,7 @@ services:
     container_name: repo-web
 
   repo-img:
-    image: registry:2.6.2
+    image: registry:2.8.2
     restart: always
     ports:
       - 5000:5000
