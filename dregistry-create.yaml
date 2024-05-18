@@ -11,7 +11,7 @@ services:
       - REGISTRY_TITLE=Docker Registry UI
       - DELETE_IMAGES=true
       - SHOW_CONTENT_DIGEST=true
-      - NGINX_PROXY_PASS_URL=http://repo-img:5000
+      - NGINX_PROXY_PASS_URL=https://repo-img:5000
       - SHOW_CATALOG_NB_TAGS=true
       - CATALOG_MIN_BRANCHES=1
       - CATALOG_MAX_BRANCHES=1
@@ -21,11 +21,16 @@ services:
     container_name: repo-web
 
   repo-img:
-    image: registry:2.8.2
+    image: registry:2.6.2
     restart: always
     ports:
-      - 5000:5000 
+      - 5000:5000
+    volumes:
+      - $HOME/.docker/certs.d:/certs 
     environment:
-      REGISTRY_STORAGE_DELETE_ENABLED: 'true'
+      REGISTRY_HTTP_ADDR: 0.0.0.0:5000
+      REGISTRY_HTTP_TLS_CERTIFICATE: /certs/spire:5000/ca.crt
+      REGISTRY_HTTP_TLS_KEY: /certs/spire:5000/ca.key
+      REGISTRY_STORAGE_DELETE_ENABLED: true
     container_name: repo-img
 

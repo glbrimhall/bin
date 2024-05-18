@@ -2,7 +2,7 @@
 
 IMAGE=$1
 TAG=$2
-REGISTRY=${3:-http://$HOSTNAME:5000}
+REGISTRY=${3:-https://$HOSTNAME:5000}
 
 if [ "$IMAGE" == "" ]; then
     echo "GET $REGISTRY/v2/_catalog"
