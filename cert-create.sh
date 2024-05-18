@@ -80,6 +80,10 @@ openssl x509 -req -extfile <(printf "subjectAltName=DNS:$DEVICE") -in $DESTDIR/$
 
 openssl x509 -in $DESTDIR/$DEVICE.crt -text -noout
 
+echo "CREATE $DEVICE.pem"
+# From https://medium.com/@deekonda.ajay/create-your-own-secured-docker-private-registry-with-ssl-6a44539f74b8
+cat $DESTDIR/$DEVICE.key $DESTDIR/$DEVICE.crt $DESTDIR/$ROOTCA.crt > $DESTDIR/$DEVICE.pem
+
 echo "CERT: SHA-256 hash of cert"
 openssl x509 -fingerprint -sha256 -noout -in $DESTDIR/$DEVICE.crt
 
