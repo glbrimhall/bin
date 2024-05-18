@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   repo-web:
-    image: joxit/docker-registry-ui:2.5.7-debian
+    image: joxit/docker-registry-ui:2.5.7
     restart: always
     ports:
       - 8080:80
