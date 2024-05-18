@@ -1,8 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 IMAGE=$1
-DIGEST=$2
-REGISTRY=${3:-http://dock:5000}
+TAG_UNUSED=$2
+DIGEST=$3
+REGISTRY=${4:-http://$HOSTNAME:5000}
 
+echo "DEL $REGISTRY $IMAGE $DIGEST"
 curl -vvv \
      -X DELETE \
      -k $REGISTRY/v2/$IMAGE/manifests/$DIGEST

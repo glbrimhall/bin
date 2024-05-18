@@ -17,5 +17,5 @@ EOF
 # From https://github.com/containerd/nerdctl/discussions/1536 
 sudo ln -s /usr/sbin/iptables /usr/local/bin/iptables 
 sudo ln -s /usr/sbin/ip6tables /usr/local/bin/ip6tables 
-docker run -d -p 5000:5000 --name registry registry:2.7
+docker run -d --restart always -p 5000:5000 --name registry registry:2.7
 

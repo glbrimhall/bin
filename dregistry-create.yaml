@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  repo-web:
+    image: joxit/docker-registry-ui:2.5.7-debian
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - SINGLE_REGISTRY=true
+      - REGISTRY_TITLE=Docker Registry UI
+      - DELETE_IMAGES=true
+      - SHOW_CONTENT_DIGEST=true
+      - NGINX_PROXY_PASS_URL=http://repo-img:5000
+      - SHOW_CATALOG_NB_TAGS=true
+      - CATALOG_MIN_BRANCHES=1
+      - CATALOG_MAX_BRANCHES=1
+      - TAGLIST_PAGE_SIZE=100
+      - REGISTRY_SECURED=false
+      - CATALOG_ELEMENTS_LIMIT=1000
+    container_name: repo-web
+
+  repo-img:
+    image: registry:2.8.2
+    restart: always
+    ports:
+      - 5000:5000 
+    environment:
+      REGISTRY_STORAGE_DELETE_ENABLED: 'true'
+    container_name: repo-img
+
