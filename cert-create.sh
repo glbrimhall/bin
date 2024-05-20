@@ -82,9 +82,10 @@ openssl x509 -in $DESTDIR/$DEVICE.crt -text -noout
 
 echo "CREATE $DEVICE.pem"
 # From https://medium.com/@deekonda.ajay/create-your-own-secured-docker-private-registry-with-ssl-6a44539f74b8
-cat $DESTDIR/$DEVICE.key $DESTDIR/$DEVICE.crt $DESTDIR/$ROOTCA.crt > $DESTDIR/$DEVICE.pem
-mkdir -p ~/.docker/certs.d
-cp -v $DESTDIR/$DEVICE.pem ~/.docker/certs.d
+cat $DESTDIR/$DEVICE.crt $DESTDIR/$ROOTCA.crt > $DESTDIR/$DEVICE.pem
+mkdir -p ~/.docker/certs.d/$DEVICE\:5000
+cp -v $DESTDIR/$DEVICE.pem ~/.docker/certs.d/$DEVICE\:5000/ca.crt
+cp -v $DESTDIR/$DEVICE.key ~/.docker/certs.d/$DEVICE\:5000/ca.key
 
 echo "CERT: SHA-256 hash of cert"
 openssl x509 -fingerprint -sha256 -noout -in $DESTDIR/$DEVICE.crt
