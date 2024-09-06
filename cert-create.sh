@@ -4,19 +4,21 @@ set -x
 # This script built from steps outlined at:
 # https://datacenteroverlords.com/2012/03/01/creating-your-own-ssl-certificate-authority/
 
-DAYS=1095        # 3 * 365
+# Another reference https://deliciousbrains.com/ssl-certificate-authority-for-local-https-development/
+
+DAYS=3650        # 10 * 365
 DESTDIR=${2:-web}
-ROOTCAPEM=${3}
+ROOTCAPEM=${3:-dervish}
 ROOTCA=${ROOTCAPEM%%.pem}
-DEVICE=${1:-localhost-proxy}
-SUBJECT="/C=US/postalCode=85721/ST=Arizona/L=Tucson/streetAddress=The University of Arizona/O=The University of Arizona/OU=The University of Arizona Library/CN="
+DEVICE=${1:-$HOSTNAME}
+SUBJECT="/C=US/postalCode=93445/ST=California/L=Oceano/streetAddress=1732 19th/O=1732 19th/OU=1732 19th St/CN="
 #SUBJECT="/C=US/ST=Arizona/L=Tucson/O=UALib-TESS/CN="
 
 if [ ! -d $DESTDIR ]; then
     mkdir -p $DESTDIR
 fi
 
-if [ "$ROOTCAPEM" != "" || "$ROOTCAPEM" != "self" ]; then
+if [ "$ROOTCAPEM" != "" ] || [ "$ROOTCAPEM" != "self" ]; then
 if [ ! -f $DESTDIR/$ROOTCA.pem ]; then
 
 echo
@@ -30,16 +32,22 @@ openssl genrsa -out $DESTDIR/$ROOTCA.key 2048
 # openssl genrsa -des3 -out $DESTDIR/$ROOTCA.key 2048
 
 # Create RootCA public key, in pem format
-openssl req -x509 -new -nodes -key $ROOTCA.key -subj "$SUBJECT$ROOTCA" -sha256 -days 1024 -out $DESTDIR/$ROOTCA.pem
+openssl req -x509 -new -nodes -key $DESTDIR/$ROOTCA.key -subj "$SUBJECT$ROOTCA" -sha256 -days $DAYS -out $DESTDIR/$ROOTCA.pem
 
 # Needed if installing into apache as an intermediate CA
 #openssl x509 -in $DESTDIR/$ROOTCA.pem -inform PEM -outform DER -out $DESTDIR/$ROOTCA.crt
 openssl x509 -in $DESTDIR/$ROOTCA.pem -inform PEM -out $DESTDIR/$ROOTCA.crt
 
+if [ ! -f /usr/local/share/ca-certificates/$ROOTCA.crt ]; then
+  echo "REGISTER /usr/local/share/ca-certificates/$ROOTCA.crt"
+  cp -v $DESTDIR/$ROOTCA.crt /usr/local/share/ca-certificates/$ROOTCA.crt
+  sudo update-ca-certificates
+fi
+
 fi
 
 openssl x509 -in $DESTDIR/$ROOTCA.pem -text -noout
- 
+
 SIGNING_KEY="-CA $DESTDIR/$ROOTCA.pem -CAkey $DESTDIR/$ROOTCA.key -CAcreateserial"
 
 fi
@@ -72,7 +80,14 @@ openssl x509 -req -extfile <(printf "subjectAltName=DNS:$DEVICE") -in $DESTDIR/$
 
 openssl x509 -in $DESTDIR/$DEVICE.crt -text -noout
 
-echo "CERT: SHA-1 hash of cert"
-openssl x509 -fingerprint -sha1 -noout -in $DESTDIR/$DEVICE.crt
+echo "CREATE $DEVICE.pem"
+# From https://medium.com/@deekonda.ajay/create-your-own-secured-docker-private-registry-with-ssl-6a44539f74b8
+cat $DESTDIR/$DEVICE.crt $DESTDIR/$ROOTCA.crt > $DESTDIR/$DEVICE.pem
+mkdir -p ~/.docker/certs.d/$DEVICE\:5000
+cp -v $DESTDIR/$DEVICE.pem ~/.docker/certs.d/$DEVICE\:5000/ca.crt
+cp -v $DESTDIR/$DEVICE.key ~/.docker/certs.d/$DEVICE\:5000/ca.key
+
+echo "CERT: SHA-256 hash of cert"
+openssl x509 -fingerprint -sha256 -noout -in $DESTDIR/$DEVICE.crt
 
 fi
