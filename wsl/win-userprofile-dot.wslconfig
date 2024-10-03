@@ -1,0 +1,3 @@
+# From https://github.com/spurin/wsl-cgroupsv2
+[wsl2]
+kernelCommandLine = cgroup_no_v1=all systemd.unified_cgroup_hierarchy=1
