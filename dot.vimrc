@@ -343,14 +343,14 @@ augroup END
 :filetype plugin on
 
 " Color for dark
-:color ron
+":color ron
 ":color darkblue
 ":color pablo
 ":color slate
 ":color desert
 
 " Color for light
-":color zellner
+:color zellner
 ":color delek
 
 " Don't auto-jump to matching paren
