@@ -10,10 +10,9 @@ if test -d "~/windows"; then
   sudo echo "cgroup2 /sys/fs/cgroup cgroup2 rw,nosuid,nodev,noexec,relatime,nsdelegate 0 0" >> /etc/fstab
 fi
 
-sudo apt-get install fuse-overlayfs dbus-user-session slirp4netns rootlesskit iptables
+sudo apt-get install fuse-overlayfs dbus-user-session slirp4netns rootlesskit iptables uidmap
 
 # From https://rootlesscontaine.rs/getting-started/common/cgroup2/
-
 
 sudo mkdir -p /etc/systemd/system/user@.service.d
 cat <<EOF | sudo tee /etc/systemd/system/user@.service.d/delegate.conf
