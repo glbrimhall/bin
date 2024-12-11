@@ -1,1 +1,1 @@
-DEFAULT_CONTAINER=dotnet5
+DEFAULT_CONTAINER=xrdp-pyphp-test

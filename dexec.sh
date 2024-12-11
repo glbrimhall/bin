@@ -2,7 +2,9 @@
 
 #set -x
 
-CONTAINER=${1:-xrdp-pyphp-test}
+. $HOME/bin/docker-default-container.sh
+
+CONTAINER=${1:-$DEFAULT_CONTAINER}
 COMMAND="${2}"
 
 if [ "XX$CONTAINER" = "XXxrdp-pyphp-test" ] && [ "XX$COMMAND" = "XX" ]; then
