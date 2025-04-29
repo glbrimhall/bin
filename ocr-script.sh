@@ -26,7 +26,7 @@ mv "$filename" "$ocr_filename"
 #/usr/bin/ocrmypdf --deskew --clean --force-ocr -l eng "${@:4}" "$filename" "${ocr_filename}" &>> /tmp/ocr.log
 /usr/bin/ocrmypdf -l eng "${ocr_filename}" "$filename" &>> /tmp/ocr.log
 
-rm -f "$ocr_filename"
+rm -f "$ocr_filename" "$filename.txt"
 
 #if [ $? -ne 0 ]; then
 #  notify-send -i scanner "OCR Failed" "See /tmp/ocr.log"
