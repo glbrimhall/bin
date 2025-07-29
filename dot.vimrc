@@ -65,6 +65,9 @@ filetype plugin indent on    " Vundle required
 
 endif
 
+" Enable regex hilight
+set regexpengine=1
+
 " Disable bell
 set visualbell
 set t_vb=
