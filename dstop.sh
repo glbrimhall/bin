@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 if [ -f docker-compose.yml ] && [ "$1" = "" ]; then
   docker-compose stop
 else
@@ -7,6 +9,7 @@ else
 . $HOME/bin/docker-default-container.sh
 
 CONTAINER=${1:-$DEFAULT_CONTAINER}
+docker update --restart=no "$CONTAINER"
 docker stop "$CONTAINER"
 docker logs "$CONTAINER"
 
