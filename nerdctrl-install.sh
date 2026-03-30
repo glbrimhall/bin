@@ -2,24 +2,49 @@
 SCRIPTDIR="$( dirname "$(readlink -f "$0")" )"
 cd "$SCRIPTDIR/.."
 
-if test -d "~/windows"; then
+set -x
+
+NERD_VER=2.2.1
+export NERD_VER
+
+if [ "xx$WSLENV" != "xx" ]; then
+if $(grep croup /etc/fstab > /dev/null); then
 # for wsl2:
-  sudo cp ~/bin/wsl/etc-wsl.conf /etc/wsl.conf
-  cp ~/bin/wsl/win-userprofile-dot.wslconfig ~/windows/.wslconfig
+  sudo cp -v ~/bin/wsl/etc-wsl.conf /etc/wsl.conf
+  cp -v ~/bin/wsl/win-userprofile-dot.wslconfig ~/windows/.wslconfig
   # From https://stackoverflow.com/questions/73021599/how-to-enable-cgroup-v2-in-wsl2 
   sudo echo "cgroup2 /sys/fs/cgroup cgroup2 rw,nosuid,nodev,noexec,relatime,nsdelegate 0 0" >> /etc/fstab
+  echo "RESTART wsl, then rerun script"
+  exit
+fi
 fi
 
-sudo apt-get install fuse-overlayfs dbus-user-session slirp4netns rootlesskit iptables uidmap
+sudo apt-get install fuse-overlayfs dbus-user-session slirp4netns rootlesskit iptables uidmap wget curl
 
 # From https://rootlesscontaine.rs/getting-started/common/cgroup2/
 
+if [ ! -f  /etc/systemd/system/user@.service.d/delegate.conf ]; then 
 sudo mkdir -p /etc/systemd/system/user@.service.d
 cat <<EOF | sudo tee /etc/systemd/system/user@.service.d/delegate.conf
 [Service]
 Delegate=cpu cpuset io memory pids
 EOF
 sudo systemctl daemon-reload
+fi
+
+if [ ! -f "/tmp/nerdctl-$NERD_VER-linux-amd64.tar.gz" ]; then
+wget --no-check-certificate -P /tmp "https://github.com/containerd/nerdctl/releases/download/v$NERD_VER/nerdctl-full-$NERD_VER-linux-amd64.tar.gz"
+
+find /usr/local -type d -print0 | sudo xargs -0 chmod 775 
+sudo chown -R root:adm /usr/local 
+
+tar Cxzvvf /usr/local "/tmp/nerdctl-full-$NERD_VER-linux-amd64.tar.gz"
+
+  if [ ! -f /usr/local/bin/nerdctl ]; then
+  echo "Failed to install /usr/local/bin/nerdctl"
+  exit 1
+  fi
+fi
 
 containerd-rootless-setuptool.sh install
 containerd-rootless-setuptool.sh install-buildkit
