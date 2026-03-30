@@ -1,0 +1,15 @@
+[user]
+	email = geoff@glbrimhall.com
+	name = Geoff Brimhall
+	signingkey = 11329157783CB505709D3500F7970CA3098B1DD6
+
+[gcrypt]
+	gpg-args = --use-agent
+	publish-participants = true
+[pull]
+	rebase = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
