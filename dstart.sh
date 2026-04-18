@@ -1,15 +1,19 @@
 #!/bin/bash
 
+set +x
+
+if [ -f docker-compose.yml ] && [ "$1" = "" ]; then
+  docker-compose start
+else
+
 . $HOME/bin/docker-default-container.sh
 
 CONTAINER=${1:-$DEFAULT_CONTAINER}
-SHELL=${2:-bash}
+docker update --restart=always "$CONTAINER"
+echo -n "docker start "
+docker start "$CONTAINER"
+sleep 3
+echo "docker logs $CONTAINER"
+docker logs "$CONTAINER"
 
-if [ "$2" = "" ]; then
-    if [ "xx$MSYSTEM" != "xx" ]; then
-       WINPTY=winpty
-    fi
-    $WINPTY docker exec -it "$CONTAINER" $SHELL -i
-else
-   docker exec $CONTAINER sh -c "exec $1"
 fi

@@ -1,0 +1,29 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Geoffrey L. Brimhall
+	email = geoff@glbrimhall.com
+[push]
+	default = matching
+	ui = auto
+[gcrypt]
+	gpg-args = --use-agent
+	publish-participants = true
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = red bold
+	old = cyan
+	new = magenta bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[core]
+	pager = less -R
+
+[pull]
+	rebase = false
