@@ -1,4 +1,4 @@
-n#!/bin/bash
+#!/bin/bash
 set -x
 
 # This script built from steps outlined at:
