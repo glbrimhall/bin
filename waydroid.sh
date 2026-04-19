@@ -1,0 +1,2 @@
+waydroid session start
+

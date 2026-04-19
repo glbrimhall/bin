@@ -1,5 +1,6 @@
 sudo apt install git git-remote-gcrypt gnupg rclone scdaemon
-
+gpg-connect-agent updatestartuptty /bye >/dev/null
+gpgconf --kill gpg-agent # reset
 exit
 
 # From https://alexcabal.com/creating-the-perfect-gpg-keypair
