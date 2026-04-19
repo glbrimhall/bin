@@ -24,5 +24,6 @@ alias sd='systemctl daemon-reload'
 #eval "$(pyenv init -)"
 #eval "$(pyenv virtualenv-init -)"
 
+export GPG_TTY=$(tty)
 stty -ixon
 
