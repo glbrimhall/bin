@@ -17,7 +17,7 @@ if [ "xx$3" != "xx" ]; then
 fi
 
 if [ "XX$CONTAINER" = "XXxrdp-pyphp-test" ] && [ "XX$COMMAND" = "XX" ]; then
-  COMMAND="su --login geoff"
+  COMMAND="su --login duser"
 fi
 
 echo "docker exec -it $CONTAINER env \"TERM=xterm-256color\" $COMMAND" 

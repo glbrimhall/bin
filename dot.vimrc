@@ -346,7 +346,7 @@ augroup END
 :filetype plugin on
 
 " Color for dark
-:color ron
+":color ron
 ":color darkblue
 ":color pablo
 ":color slate
