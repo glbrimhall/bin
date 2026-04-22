@@ -1,4 +1,7 @@
-sudo apt install git git-remote-gcrypt gnupg rclone scdaemon
+sudo apt install git git-remote-gcrypt gnupg rclone scdaemon pinentry-tty
+echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
+echo "pinentry-program /usr/bin/pinentry-tty" >> $HOME/.gnupg/gpg-agent.conf
+gpg-connect-agent reloadagent /bye
 gpg-connect-agent updatestartuptty /bye >/dev/null
 gpgconf --kill gpg-agent # reset
 exit
