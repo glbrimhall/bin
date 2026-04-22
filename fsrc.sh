@@ -2,6 +2,6 @@
 
 find . -type f \
 -a -not -path '*.git*' -prune \
--a -not \( -name '*~' -name '*.o' \) \
+-a \( -not -name '*~' -not -name '*.o' -not -iname '*.log' \) \
 -print0 | xargs -0 grep -nH --color $1
 
