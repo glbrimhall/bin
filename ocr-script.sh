@@ -24,7 +24,7 @@ ocr_filename="${filename%\.*}.ocr.${filename##*\.}"
 mv "$filename" "$ocr_filename"
 
 #/usr/bin/ocrmypdf --deskew --clean --force-ocr -l eng "${@:4}" "$filename" "${ocr_filename}" &>> /tmp/ocr.log
-/usr/bin/ocrmypdf -l eng "${ocr_filename}" "$filename" &>> /tmp/ocr.log
+/usr/bin/ocrmypdf --force-ocr -l eng "${ocr_filename}" "$filename" &>> /tmp/ocr.log
 
 rm -f "$ocr_filename" "$filename.txt"
 
