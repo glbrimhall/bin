@@ -68,21 +68,23 @@ sub walk_files
       next if ( ! -f $fn );
 
       local *IN,*OUT;
-                  
+
       print ("EDITING $fn\n");
 
       open (IN, "< $fn") || die "FAILED_EDIT $fn: $!";
       open (OUT, "> $fn.tmp") || die "FAILED_EDIT $fn.tmp: $!";
+      my $perm = (stat IN)[2] & 07777;
 
       while ( <IN> )
          {
          s/$regex_src/$regex_dst/g;
          print OUT;
          }
-      
+
       close(OUT);
       close(IN);
-      move("$fn.tmp", "$fn") or die "The move operation failed: $!";   
+      move("$fn.tmp", "$fn") or die "The move operation failed: $!";
+      chmod($perm, "$fn");
       }
 }
 
