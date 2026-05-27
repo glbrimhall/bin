@@ -1,2 +1,2 @@
 #!/bin/sh
-git branch --all
+git branch --all --sort=-committerdate
