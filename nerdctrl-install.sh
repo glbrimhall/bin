@@ -32,12 +32,12 @@ EOF
 sudo systemctl daemon-reload
 fi
 
-if [ ! -f "/tmp/nerdctl-$NERD_VER-linux-amd64.tar.gz" ]; then
+if [ ! -f "/tmp/nerdctl-full-$NERD_VER-linux-amd64.tar.gz" ]; then
 wget --no-check-certificate -P /tmp "https://github.com/containerd/nerdctl/releases/download/v$NERD_VER/nerdctl-full-$NERD_VER-linux-amd64.tar.gz"
 
 find /usr/local -type d -print0 | sudo xargs -0 chmod 2775
 sudo chown -R root:adm /usr/local
-sudo usermod -a -G adm $USER
+sudo adduser $USER adm
 
 tar Cxzvvf /usr/local "/tmp/nerdctl-full-$NERD_VER-linux-amd64.tar.gz"
 
