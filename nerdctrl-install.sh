@@ -4,7 +4,7 @@ cd "$SCRIPTDIR/.."
 
 set -x
 
-NERD_VER=2.2.1
+NERD_VER=2.4.2
 export NERD_VER
 
 if [ "xx$WSLENV" != "xx" ]; then
@@ -33,18 +33,18 @@ sudo systemctl daemon-reload
 fi
 
 if [ ! -f "/tmp/nerdctl-$NERD_VER-linux-amd64.tar.gz" ]; then
-wget --no-check-certificate -P /tmp "https://github.com/containerd/nerdctl/releases/download/v$NERD_VER/nerdctl-full-$NERD_VER-linux-amd64.tar.gz"
+  wget --no-check-certificate -P /tmp "https://github.com/containerd/nerdctl/releases/download/v$NERD_VER/nerdctl-full-$NERD_VER-linux-amd64.tar.gz"
 
-find /usr/local -type d -print0 | sudo xargs -0 chmod 2775
-sudo chown -R root:adm /usr/local
-sudo usermod -a -G adm $USER
-
-tar Cxzvvf /usr/local "/tmp/nerdctl-full-$NERD_VER-linux-amd64.tar.gz"
-
+  sudo tar Cxzvvf /usr/local "/tmp/nerdctl-full-$NERD_VER-linux-amd64.tar.gz"
   if [ ! -f /usr/local/bin/nerdctl ]; then
   echo "Failed to install /usr/local/bin/nerdctl"
   exit 1
   fi
+
+sudo adduser $USER adm
+sudo chown -R root:adm /usr/local
+find /usr/local -type d -print0 | sudo xargs -0 chmod 2775
+
 fi
 
 containerd-rootless-setuptool.sh install
