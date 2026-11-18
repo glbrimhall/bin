@@ -7,7 +7,10 @@
 sudo loginctl disable-linger $USER 
 systemctl --user stop containerd
 containerd-rootless-setuptool.sh uninstall
+
 rootlesskit rm -rf ~/.local/share/containerd ~/.local/share/nerdctl ~/.config/containerd ~/.config/systemd/user/containerd.service
+
+rm -vf ~/.config/systemd/user/*
 
 #sudo rm /usr/local/buildkit* /usr/local/nerdctl
 #sudo apt purge containerd
