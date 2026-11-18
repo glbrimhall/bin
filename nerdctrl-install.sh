@@ -54,6 +54,7 @@ containerd-rootless-setuptool.sh install-buildkit-containerd
 containerd-rootless-setuptool.sh install-bypass4netnsd
 nerdctl run --label nerdctl/bypass4netns=true
 systemctl --user restart bypass4netnsd.service
+sudo loginctl enable-linger $USER 
 
 mkdir -p ~/.docker/ 2>/dev/null
 # From https://stackoverflow.com/questions/42211380/add-insecure-registry-to-docker
@@ -67,6 +68,8 @@ mkdir -p ~/.docker/ 2>/dev/null
 sudo ln -s /usr/sbin/iptables /usr/local/bin/iptables 
 sudo ln -s /usr/sbin/ip6tables /usr/local/bin/ip6tables 
 sudo ln -s /usr/local/bin/nerdctl /usr/local/bin/docker 
+
+systemctl --user start containerd
 
 # docker run -d --restart always -p 5000:5000 --name registry registry:2.7
 cd ~/bin
